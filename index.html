@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHEH — Start Hard. End Hard.</title>
+  <meta name="description" content="SHEH makes protein bars for everyday men who meet hard days head-on. Start Hard. End Hard.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       SHEH — single-file landing page
+       Palette: charcoal / slate / sand, with ember orange accent
+       Mobile-first. No images — CSS-only mountain & trail motifs.
+       Photo placeholders are clearly marked for later swap-in.
+       ============================================================ */
+
+    :root {
+      --charcoal: #1c1e21;
+      --charcoal-deep: #141518;
+      --slate: #3b4248;
+      --slate-light: #5c656d;
+      --sand: #d8c9ae;
+      --sand-light: #ece4d3;
+      --bone: #f5f1e8;
+      --ember: #c75b2a;       /* the one strong accent */
+      --ember-dark: #a8481e;
+
+      --font-head: "Oswald", "Arial Narrow", sans-serif;
+      --font-body: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--charcoal);
+      color: var(--bone);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-head);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: 100%;
+      max-width: 64rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    section { padding: 4.5rem 0; }
+
+    .kicker {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--ember);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 6vw, 2.75rem);
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--charcoal-deep) 0%, var(--charcoal) 55%, #2a2d31 100%);
+      padding: 5rem 0 9rem;
+    }
+
+    /* CSS-only mountain ridgelines layered along the bottom */
+    .ridge {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 22vh;
+      min-height: 130px;
+      pointer-events: none;
+    }
+    .ridge--back {
+      background: var(--slate);
+      opacity: 0.45;
+      clip-path: polygon(0 70%, 12% 38%, 24% 62%, 38% 22%, 50% 55%, 63% 30%, 76% 58%, 88% 35%, 100% 60%, 100% 100%, 0 100%);
+    }
+    .ridge--mid {
+      background: var(--slate);
+      opacity: 0.75;
+      height: 17vh;
+      min-height: 100px;
+      clip-path: polygon(0 55%, 10% 75%, 22% 35%, 36% 68%, 48% 28%, 60% 60%, 74% 32%, 86% 65%, 100% 45%, 100% 100%, 0 100%);
+    }
+    .ridge--front {
+      background: var(--charcoal-deep);
+      height: 11vh;
+      min-height: 70px;
+      clip-path: polygon(0 65%, 15% 40%, 30% 70%, 45% 35%, 58% 62%, 72% 38%, 85% 58%, 100% 42%, 100% 100%, 0 100%);
+    }
+
+    .hero-name {
+      font-size: clamp(4.5rem, 22vw, 11rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--bone);
+    }
+    .hero-name span { color: var(--ember); }
+
+    .hero-motto {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: clamp(1.15rem, 5vw, 1.9rem);
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--sand);
+      margin-top: 0.5rem;
+    }
+
+    .hero-tag {
+      max-width: 28rem;
+      margin: 1.5rem auto 2.25rem;
+      color: var(--sand-light);
+      font-size: 1.05rem;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 1rem;
+      color: var(--bone);
+      background: var(--ember);
+      border: none;
+      padding: 0.95rem 2.4rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .btn:hover { background: var(--ember-dark); transform: translateY(-2px); }
+
+    /* ---------- The Code ---------- */
+
+    .code {
+      background: var(--charcoal-deep);
+      text-align: center;
+    }
+    .code p {
+      max-width: 34rem;
+      margin: 0 auto 1.1rem;
+      font-size: clamp(1.05rem, 3vw, 1.25rem);
+      color: var(--sand-light);
+    }
+    .code p strong { color: var(--bone); font-weight: 600; }
+
+    /* trail divider: a dashed path with a peak marker, CSS only */
+    .trail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 2.25rem auto 0;
+      max-width: 18rem;
+    }
+    .trail::before,
+    .trail::after {
+      content: "";
+      flex: 1;
+      border-top: 2px dashed var(--slate-light);
+    }
+    .trail-peak {
+      width: 16px;
+      height: 14px;
+      background: var(--ember);
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    }
+
+    /* ---------- Products ---------- */
+
+    .products { background: var(--charcoal); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--charcoal-deep);
+      border: 1px solid var(--slate);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Clearly marked spot for future product photography */
+    .photo-slot {
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-bottom: 2px dashed var(--slate-light);
+      background:
+        linear-gradient(160deg, rgba(92, 101, 109, 0.18) 0%, rgba(28, 30, 33, 0) 60%),
+        var(--slate);
+      color: var(--sand);
+      font-family: var(--font-head);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 1rem;
+    }
+
+    .card-body { padding: 1.4rem 1.4rem 1.6rem; }
+
+    .card h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--bone);
+    }
+
+    .card .flavor-note {
+      color: var(--sand-light);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 1rem;
+      font-family: var(--font-head);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--ember);
+      border: 1px solid var(--ember);
+      padding: 0.3rem 0.7rem;
+    }
+
+    /* ---------- About ---------- */
+
+    .about { background: var(--sand-light); color: var(--charcoal); }
+    .about .kicker { color: var(--ember-dark); }
+    .about .section-title { color: var(--charcoal-deep); }
+    .about p {
+      max-width: 36rem;
+      margin-bottom: 1.1rem;
+      color: var(--slate);
+      font-size: 1.05rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .about .photo-slot {
+      aspect-ratio: 4 / 3;
+      border: 2px dashed var(--slate-light);
+      background: var(--sand);
+      color: var(--slate);
+    }
+
+    /* ---------- Signup ---------- */
+
+    .signup {
+      position: relative;
+      background: var(--charcoal-deep);
+      text-align: center;
+      overflow: hidden;
+      padding-bottom: 7rem;
+    }
+    .signup .ridge--back { opacity: 0.25; height: 14vh; min-height: 80px; }
+
+    .signup p {
+      max-width: 28rem;
+      margin: 0 auto 2rem;
+      color: var(--sand-light);
+    }
+
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 26rem;
+      margin: 0 auto;
+    }
+
+    .signup-form input[type="email"] {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: 0.95rem 1.1rem;
+      background: var(--charcoal);
+      border: 1px solid var(--slate);
+      color: var(--bone);
+    }
+    .signup-form input[type="email"]::placeholder { color: var(--slate-light); }
+    .signup-form input[type="email"]:focus {
+      outline: 2px solid var(--ember);
+      outline-offset: -1px;
+    }
+
+    .signup-note {
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--slate-light);
+    }
+
+    /* ---------- Footer ---------- */
+
+    footer {
+      background: var(--charcoal-deep);
+      border-top: 1px solid var(--slate);
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      color: var(--sand);
+    }
+
+    .footer-links {
+      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .footer-links a {
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--sand-light);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--ember); }
+
+    .footer-fine { font-size: 0.8rem; color: var(--slate-light); }
+
+    /* ---------- Wider screens ---------- */
+
+    @media (min-width: 44rem) {
+      section { padding: 6rem 0; }
+
+      .cards { grid-template-columns: repeat(3, 1fr); }
+
+      .about-grid { grid-template-columns: 3fr 2fr; gap: 3rem; }
+
+      .signup-form { flex-direction: row; }
+      .signup-form input[type="email"] { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="wrap">
+      <h1 class="hero-name">SHE<span>H</span></h1>
+      <p class="hero-motto">Start Hard. End Hard.</p>
+      <p class="hero-tag">Protein bars for men who meet the hard days head-on.</p>
+      <a class="btn" href="#signup">Be First in Line</a>
+    </div>
+    <div class="ridge ridge--back" aria-hidden="true"></div>
+    <div class="ridge ridge--mid" aria-hidden="true"></div>
+    <div class="ridge ridge--front" aria-hidden="true"></div>
+  </header>
+
+  <!-- ============ THE CODE ============ -->
+  <section class="code" id="code">
+    <div class="wrap">
+      <span class="kicker">The Code</span>
+      <h2 class="section-title">Life starts hard.</h2>
+      <p><strong>Be hard enough to meet it.</strong> The early alarm, the school run, the long shift — that's the arena, and you're already in it.</p>
+      <p><strong>Don't quit.</strong> Not on your people, not on your word, not on yourself.</p>
+      <p><strong>Stay on the straight and narrow.</strong> Do the good things because they're hard. That's the whole code.</p>
+      <div class="trail" aria-hidden="true"><span class="trail-peak"></span></div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCTS ============ -->
+  <section class="products" id="products">
+    <div class="wrap">
+      <span class="kicker">Coming Soon</span>
+      <h2 class="section-title">Fuel for the climb</h2>
+      <p>Honest protein bars. Real ingredients, no noise. First batch is on the way.</p>
+
+      <div class="cards">
+        <article class="card">
+          <!-- PHOTO PLACEHOLDER: replace with product shot -->
+          <div class="photo-slot">[ Product photo<br>coming soon ]</div>
+          <div class="card-body">
+            <h3>First Light</h3>
+            <p class="flavor-note">Peanut butter &amp; dark chocolate. For the alarm you didn't snooze.</p>
+            <span class="badge">Coming Soon</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <!-- PHOTO PLACEHOLDER: replace with product shot -->
+          <div class="photo-slot">[ Product photo<br>coming soon ]</div>
+          <div class="card-body">
+            <h3>The Grind</h3>
+            <p class="flavor-note">Coffee &amp; cacao. For the middle miles nobody sees.</p>
+            <span class="badge">Coming Soon</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <!-- PHOTO PLACEHOLDER: replace with product shot -->
+          <div class="photo-slot">[ Product photo<br>coming soon ]</div>
+          <div class="card-body">
+            <h3>Last Rep</h3>
+            <p class="flavor-note">Salted caramel &amp; almond. For finishing what you started.</p>
+            <span class="badge">Coming Soon</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="kicker">Who We Are</span>
+        <h2 class="section-title">Two friends, one standard</h2>
+        <p>SHEH is two friends building something real. No investors, no playbook — just early mornings, kitchen-table batches, and a belief that ordinary men doing hard things right is worth backing.</p>
+        <p>We're not here to tell you how to be a man. We're here to feed the one you already are.</p>
+      </div>
+      <!-- PHOTO PLACEHOLDER: replace with founders photo -->
+      <div class="photo-slot">[ Founders photo<br>coming soon ]</div>
+    </div>
+  </section>
+
+  <!-- ============ SIGNUP ============ -->
+  <section class="signup" id="signup">
+    <div class="wrap">
+      <span class="kicker">Early Access</span>
+      <h2 class="section-title">Be first in line</h2>
+      <p>Drop your email. When the first batch is ready, you'll hear it from us before anyone else.</p>
+
+      <!-- FORM PLACEHOLDER: no backend yet — wire up action when ready -->
+      <form class="signup-form" action="#" method="get">
+        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+        <button class="btn" type="submit">Count Me In</button>
+      </form>
+      <p class="signup-note">No spam. No noise. Just word when it's ready.</p>
+    </div>
+    <div class="ridge ridge--back" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap">
+      <p class="footer-brand">SHEH</p>
+      <nav class="footer-links">
+        <!-- PLACEHOLDER LINKS: point to real profiles when live -->
+        <a href="#" aria-label="Instagram (coming soon)">Instagram</a>
+        <a href="#" aria-label="YouTube (coming soon)">YouTube</a>
+      </nav>
+      <p class="footer-fine">&copy; 2026 SHEH. Start Hard. End Hard.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
