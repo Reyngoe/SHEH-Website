@@ -337,6 +337,14 @@
       color: var(--slate-light);
     }
 
+    .signup-confirm {
+      font-family: var(--font-head);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--sand);
+    }
+    .signup-confirm[hidden] { display: none; }
+
     /* ---------- Footer ---------- */
 
     footer {
@@ -476,11 +484,15 @@
       <h2 class="section-title">Be first in line</h2>
       <p>Drop your email. When the first batch is ready, you'll hear it from us before anyone else.</p>
 
-      <!-- FORM PLACEHOLDER: no backend yet — wire up action when ready -->
-      <form class="signup-form" action="#" method="get">
-        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+      <form class="signup-form" id="signup-form" action="https://shehthrive.us9.list-manage.com/subscribe/post?u=bceb3026939a1e41a9db1c7bb&amp;id=c92a052225&amp;f_id=003056e1f0" method="post">
+        <input type="email" name="EMAIL" placeholder="you@example.com" required aria-label="Email address">
+        <!-- Mailchimp bot protection — leave empty -->
+        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+          <input type="text" name="b_bceb3026939a1e41a9db1c7bb_c92a052225" tabindex="-1" value="">
+        </div>
         <button class="btn" type="submit">Count Me In</button>
       </form>
+      <p class="signup-confirm" id="signup-confirm" hidden>You're in. We'll be in touch.</p>
       <p class="signup-note">No spam. No noise. Just word when it's ready.</p>
     </div>
     <div class="ridge ridge--back" aria-hidden="true"></div>
@@ -498,6 +510,57 @@
       <p class="footer-fine">&copy; 2026 SHEH. Start Hard. End Hard.</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('signup-form');
+      var confirmMsg = document.getElementById('signup-confirm');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Mailchimp's JSONP endpoint allows cross-origin signup without
+        // leaving the page (the plain POST endpoint blocks CORS).
+        var url = form.action.replace('/subscribe/post?', '/subscribe/post-json?');
+        var params = new URLSearchParams(new FormData(form));
+        var callbackName = 'mcCallback' + Date.now();
+        params.set('c', callbackName);
+
+        var button = form.querySelector('button[type="submit"]');
+        button.disabled = true;
+
+        var script = document.createElement('script');
+
+        function finish() {
+          delete window[callbackName];
+          script.remove();
+        }
+
+        window[callbackName] = function (data) {
+          finish();
+          if (data.result === 'success') {
+            form.hidden = true;
+            confirmMsg.textContent = "You're in. We'll be in touch.";
+            confirmMsg.hidden = false;
+          } else {
+            button.disabled = false;
+            confirmMsg.textContent = 'Something went wrong. Check your email and try again.';
+            confirmMsg.hidden = false;
+          }
+        };
+
+        script.onerror = function () {
+          finish();
+          button.disabled = false;
+          // Network blocked the JSONP request — fall back to a plain submit.
+          form.submit();
+        };
+
+        script.src = url + '&' + params.toString();
+        document.body.appendChild(script);
+      });
+    })();
+  </script>
 
 </body>
 </html>
