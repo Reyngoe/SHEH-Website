@@ -515,9 +515,14 @@
     (function () {
       var form = document.getElementById('signup-form');
       var confirmMsg = document.getElementById('signup-confirm');
+      var button = form.querySelector('button[type="submit"]');
+      var inFlight = false;
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+        if (inFlight) return;
+        inFlight = true;
+        button.disabled = true;
 
         // Mailchimp's JSONP endpoint allows cross-origin signup without
         // leaving the page (the plain POST endpoint blocks CORS).
@@ -526,19 +531,25 @@
         var callbackName = 'mcCallback' + Date.now();
         params.set('c', callbackName);
 
-        var button = form.querySelector('button[type="submit"]');
-        button.disabled = true;
-
         var script = document.createElement('script');
 
         function finish() {
           delete window[callbackName];
           script.remove();
+          inFlight = false;
         }
 
         window[callbackName] = function (data) {
           finish();
-          if (data.result === 'success') {
+          // Duplicate signups can come back as result "success" or as an
+          // error whose message mentions the address is already subscribed.
+          var msg = String((data && data.msg) || '');
+          var alreadySubscribed = /already subscribed|already a list member|already on/i.test(msg);
+          if (alreadySubscribed) {
+            form.hidden = true;
+            confirmMsg.textContent = "You're already on the list. We'll be in touch.";
+            confirmMsg.hidden = false;
+          } else if (data && data.result === 'success') {
             form.hidden = true;
             confirmMsg.textContent = "You're in. We'll be in touch.";
             confirmMsg.hidden = false;
