@@ -10,17 +10,21 @@ whole bracket — including the brackets — with the real words.
 
 ## Open items
 
-| # | What's needed | Where it appears |
-|---|----------------|------------------|
-| 1 | Company contact email address | `brochure.html` — About/Contact panel |
-| 2 | Bar 1 — final name & flavor | `brochure.html` — The Bars panel |
-| 3 | Bar 2 — final name & flavor | `brochure.html` — The Bars panel |
-| 4 | Bar 3 — final name & flavor | `brochure.html` — The Bars panel |
-| 5 | One-line ingredient summary for the bars | `brochure.html` — FAQ panel ("What's in the bars?") |
+*None right now.*
 
-## Notes
-- The website's product section currently shows working names
-  (First Light, The Grind, Last Rep). The brochure intentionally uses
-  placeholders instead, since you said flavors aren't final. If those
-  working names ARE final, items 2–4 can be filled with them.
-- Don't print the brochure until items 1–5 are filled in.
+## Awaiting founder review (not facts — decisions)
+
+- Disclaimer placement: a small footnote — "Flavor lineup shown is
+  preliminary and subject to change. Official names and flavors will be
+  announced before launch." — now appears under the bar list in
+  `brochure.html`, under the product cards on the website, and (in
+  shortened spoken form) in Roy's answer about the bars. Founder wants
+  to review before the brochure is printed.
+
+## Resolved
+
+| # | What was needed | Answer used |
+|---|------------------|-------------|
+| 1 | Company contact email | SHEH.thrive@gmail.com |
+| 2–4 | Bar names & flavors | Preliminary lineup from the website: First Light (peanut butter & dark chocolate), The Grind (coffee & cacao), Last Rep (salted caramel & almond) — marked as subject to change |
+| 5 | One-line ingredient summary | Flavor-based only: "Flavors built around peanut butter, dark chocolate, coffee, cacao, salted caramel, and almond." Full ingredient list still to come at launch |

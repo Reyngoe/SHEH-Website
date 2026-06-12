@@ -239,7 +239,7 @@ const ROY = {
         "SHEH stands for Start Hard, End Hard. Two friends, full-time jobs, building honest protein bars the hard way — kitchen batches and early mornings.",
         "The code is simple: life starts hard, so be hard enough to meet it. Don't quit, keep your word, stay on the straight and narrow.",
         "Start hard today, be harder than yesterday, for today is yesterday's tomorrow. That's the line everything here is built on.",
-        "Three bars are on the way: First Light, The Grind, and Last Rep. Peanut butter and dark chocolate, coffee and cacao, salted caramel and almond.",
+        "Three bars are in the works — working names First Light, The Grind, and Last Rep: peanut butter and dark chocolate, coffee and cacao, salted caramel and almond. Official lineup gets announced before launch.",
         "Can't sell you one yet — the first batch is still coming. Put your email in the signup on this page and you'll be first in line.",
         "Full ingredients get published when the first batch ships. No noise, no mystery — that's a promise.",
         "We're not here to tell you how to be a man. We're here to fuel the one you already are.",
