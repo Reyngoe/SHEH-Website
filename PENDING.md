@@ -10,9 +10,7 @@ whole bracket — including the brackets — with the real words.
 
 ## Open items
 
-| # | What's needed | Where it appears |
-|---|----------------|------------------|
-| 6 | Founder first names for the email sign-off | `content/welcome-email.md` — bottom of the email body |
+*None right now.*
 
 ## Queued for the final task (placeholder sweep)
 
@@ -37,3 +35,4 @@ whole bracket — including the brackets — with the real words.
 | 1 | Company contact email | the1sheh@gmail.com |
 | 2–4 | Bar names & flavors | Preliminary lineup from the website: First Light (peanut butter & dark chocolate), The Grind (coffee & cacao), Last Rep (salted caramel & almond) — marked as subject to change |
 | 5 | One-line ingredient summary | Flavor-based only: "Flavors built around peanut butter, dark chocolate, coffee, cacao, salted caramel, and almond." Full ingredient list still to come at launch |
+| 6 | Founder first names for the email sign-off | Jacob & Patrick |

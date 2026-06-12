@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story — SHEH</title>
+  <meta name="description" content="Two friends since middle school, full-time jobs, building SHEH the hard way in San Diego. This is the story.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Shares the look of index.html: charcoal / slate / sand, ember accent */
+    :root {
+      --charcoal: #1c1e21;
+      --charcoal-deep: #141518;
+      --slate: #3b4248;
+      --slate-light: #5c656d;
+      --sand: #d8c9ae;
+      --sand-light: #ece4d3;
+      --bone: #f5f1e8;
+      --ember: #c75b2a;
+      --ember-dark: #a8481e;
+      --font-head: "Oswald", "Arial Narrow", sans-serif;
+      --font-body: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--charcoal);
+      color: var(--bone);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-head);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+    }
+
+    a { color: inherit; }
+
+    .wrap { width: 100%; max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
+    section { padding: 4rem 0; }
+
+    .kicker {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--ember);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.7rem, 5.5vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 1rem;
+      color: var(--bone);
+      background: var(--ember);
+      border: none;
+      padding: 0.95rem 2.4rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .btn:hover { background: var(--ember-dark); transform: translateY(-2px); }
+
+    /* ---------- page hero ---------- */
+    .story-hero {
+      position: relative;
+      text-align: center;
+      padding: 5.5rem 0 7rem;
+      background: linear-gradient(180deg, var(--charcoal-deep) 0%, var(--charcoal) 100%);
+      overflow: hidden;
+    }
+    .story-hero h1 {
+      font-size: clamp(2.2rem, 9vw, 4rem);
+      font-weight: 700;
+    }
+    .story-hero .place {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--sand);
+      margin-top: 0.75rem;
+    }
+    .home-link {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--sand-light);
+      text-decoration: none;
+      padding: 0.5rem;
+    }
+    .home-link:hover { color: var(--ember); }
+
+    .ridge {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 12vh; min-height: 70px;
+      pointer-events: none;
+      background: var(--charcoal);
+      opacity: 0.9;
+      clip-path: polygon(0 65%, 15% 40%, 30% 70%, 45% 35%, 58% 62%, 72% 38%, 85% 58%, 100% 42%, 100% 100%, 0 100%);
+    }
+
+    /* ---------- prose sections ---------- */
+    .prose p {
+      max-width: 36rem;
+      margin: 0 auto 1.1rem;
+      color: var(--sand-light);
+      font-size: 1.05rem;
+    }
+    .prose { text-align: center; }
+
+    .dark { background: var(--charcoal); }
+    .deep { background: var(--charcoal-deep); }
+
+    /* ---------- founders ---------- */
+    .light { background: var(--sand-light); color: var(--charcoal); }
+    .light .kicker { color: var(--ember-dark); }
+    .light .section-title { color: var(--charcoal-deep); }
+    .light p { color: var(--slate); }
+
+    .founders {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .founder {
+      background: var(--bone);
+      border: 1px solid var(--sand);
+      padding: 1.6rem;
+    }
+    .founder h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--charcoal-deep);
+      margin-bottom: 0.6rem;
+    }
+    .founder p { font-size: 0.98rem; margin-bottom: 0.8rem; }
+    .founder p:last-child { margin-bottom: 0; }
+
+    /* ---------- quote ---------- */
+    .quote-block {
+      max-width: 34rem;
+      margin: 0 auto;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: clamp(1.25rem, 4vw, 1.7rem);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      line-height: 1.5;
+      color: var(--sand);
+    }
+    .quote-block .mark { color: var(--ember); }
+
+    .trail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 2.25rem auto 0;
+      max-width: 18rem;
+    }
+    .trail::before, .trail::after {
+      content: "";
+      flex: 1;
+      border-top: 2px dashed var(--slate-light);
+    }
+    .trail-peak {
+      width: 16px; height: 14px;
+      background: var(--ember);
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* ---------- footer (matches index) ---------- */
+    footer {
+      background: var(--charcoal-deep);
+      border-top: 1px solid var(--slate);
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+    .footer-brand {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      color: var(--sand);
+    }
+    .footer-links {
+      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .footer-links a {
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--sand-light);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.5rem 0.25rem;
+    }
+    .footer-links a:hover { color: var(--ember); }
+    .footer-links svg { width: 1.35rem; height: 1.35rem; fill: currentColor; flex-shrink: 0; }
+    .footer-fine { font-size: 0.8rem; color: var(--slate-light); }
+
+    @media (min-width: 44rem) {
+      section { padding: 5.5rem 0; }
+      .founders { grid-template-columns: 1fr 1fr; }
+      .cta-row { flex-direction: row; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <header class="story-hero">
+    <a class="home-link" href="index.html">&larr; SHEH</a>
+    <div class="wrap">
+      <span class="kicker">Our Story</span>
+      <h1>Two Friends, One Standard</h1>
+      <p class="place">San Diego, California</p>
+    </div>
+    <div class="ridge" aria-hidden="true"></div>
+  </header>
+
+  <!-- ============ SINCE MIDDLE SCHOOL ============ -->
+  <section class="dark prose">
+    <div class="wrap">
+      <span class="kicker">The Foundation</span>
+      <h2 class="section-title">Since middle school</h2>
+      <p>We're Jacob and Patrick. We met in middle school, and we've done just about everything together since — workouts, jobs, the long stretch of years where life gets heavy and you find out who's still standing next to you.</p>
+      <p>Decades later, the friendship holds. That's the foundation this company is built on.</p>
+      <div class="trail" aria-hidden="true"><span class="trail-peak"></span></div>
+    </div>
+  </section>
+
+  <!-- ============ THE FOUNDERS ============ -->
+  <section class="light">
+    <div class="wrap" style="text-align:center;">
+      <span class="kicker">Who We Are</span>
+      <h2 class="section-title">Built between shifts</h2>
+      <div class="founders">
+        <article class="founder">
+          <h3>Jacob</h3>
+          <p>Ten-plus years in manufacturing and operations — production supervision, team training and management, process control, inventory, scheduling. He also owns and operates a private storage rental business in Riverside County.</p>
+          <p>A father of three. Known for showing up — logging serious miles every week between work, family, and business commitments.</p>
+        </article>
+        <article class="founder">
+          <h3>Patrick</h3>
+          <p>Worked his way up from casino service jobs through civilian manufacturing, then a federal contracting role at a Department of Defense fulfillment center in San Diego. Today he serves in the U.S. Navy, training in electrical engineering and cybersecurity.</p>
+          <p>Not a father yet — but ask his many nieces and nephews who shows up for them.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY BARS ============ -->
+  <section class="deep prose">
+    <div class="wrap">
+      <span class="kicker">2023</span>
+      <h2 class="section-title">It started with a simple problem</h2>
+      <p>We were getting up early, training hard, getting stronger — and we couldn't find a protein bar we actually trusted to fuel it. So we started making our own.</p>
+      <p>Then came the thought that built the company: <strong style="color: var(--bone);">other people need this too.</strong></p>
+      <p>The idea has never gotten more complicated than it was that day. Keep it simple. Keep it clean. Make it work.</p>
+    </div>
+  </section>
+
+  <!-- ============ THE HARD WAY ============ -->
+  <section class="dark prose">
+    <div class="wrap">
+      <span class="kicker">No Factory</span>
+      <h2 class="section-title">Two kitchens, the hard way</h2>
+      <p>There's no production line. Batches happen in our kitchens — his one week, mine the next, between shifts and after bedtime.</p>
+      <p>We've pressed bars that came out right and bars that absolutely didn't. Ratio experiments gone wrong. A chocolate peanut butter dry enough to sand wood. We ate the failures, wrote down what we learned, and went again.</p>
+      <p>And yes — there have been some failed lunges after a long batch night. Quality control has a price.</p>
+      <div class="trail" aria-hidden="true"><span class="trail-peak"></span></div>
+    </div>
+  </section>
+
+  <!-- ============ THE STANDARD ============ -->
+  <section class="deep prose">
+    <div class="wrap">
+      <span class="kicker">The Standard</span>
+      <h2 class="section-title">Wholesome and legit</h2>
+      <p>No investors. No shortcuts. Nothing we wouldn't hand to a friend at the gym. We're building SHEH the same way we'd tell you to build anything: do the right hard thing, keep your word, never give up.</p>
+      <p class="quote-block" style="margin-top:2rem;"><span class="mark">&ldquo;</span>Start hard today, be harder than yesterday, for today is yesterday&rsquo;s tomorrow.<span class="mark">&rdquo;</span></p>
+      <div class="cta-row">
+        <a class="btn" href="index.html#signup">Be First in Line</a>
+        <a class="btn" href="https://www.instagram.com/the1sheh" target="_blank" rel="noopener" style="background: var(--slate);">Follow @the1sheh</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap">
+      <p class="footer-brand">SHEH</p>
+      <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="https://www.instagram.com/the1sheh" target="_blank" rel="noopener" aria-label="SHEH on Instagram (@the1sheh)">Instagram</a>
+        <a href="https://www.youtube.com/@the1sheh" target="_blank" rel="noopener" aria-label="The S.H.E.H Company on YouTube">YouTube</a>
+      </nav>
+      <p class="footer-fine">&copy; 2026 The S.H.E.H Company. Start Hard. End Hard.</p>
+    </div>
+  </footer>
+
+  <!-- Old Man Roy rides along on this page too -->
+  <script src="mentor-words.js" defer></script>
+  <script src="mentor.js" defer></script>
+
+</body>
+</html>
