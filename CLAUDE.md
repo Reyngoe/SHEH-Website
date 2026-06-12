@@ -17,6 +17,20 @@ These rules apply to every session working in this repository.
    first.** This includes removing items, reordering, renaming labels,
    or changing how the mobile menu works.
 
+## Copy and brand-saying rules
+
+4. **All site copy addresses the reader directly in second person
+   wherever it makes sense.** Exceptions: the Our Story page (founders
+   speak as "we") and FAQ answers where "we" refers to the company.
+   This rule gets enforced in the task 6 site-wide sweep.
+
+5. **Flagship brand sayings** are (a) the full signature quote —
+   "Start hard today, be harder than yesterday, for today is
+   yesterday's tomorrow." — and (b) "Built not given." Use them where
+   fitting across the brand. "Harder than yesterday" may be used as a
+   short form, but never exclusively in place of the full quote: the
+   full quote is the primary representation of the brand.
+
 ## Context
 
 - The responsive navigation menu (`.site-nav`, with hamburger toggle on
