@@ -21,7 +21,8 @@ These rules apply to every session working in this repository.
 
 - The responsive navigation menu (`.site-nav`, with hamburger toggle on
   mobile) exists on every page: `index.html`, `our-story.html`,
-  `faq.html`, and `brochure.html` (screen-only there — it never prints).
+  `philosophy.html`, `faq.html`, and `brochure.html` (screen-only there —
+  it never prints). Menu order: Home, Our Story, Philosophy, FAQ.
   Preserve it in all future work.
 - The owner is a non-technical founder: explain changes in plain
   language, never invent product/company facts (use `[PENDING: …]` and
