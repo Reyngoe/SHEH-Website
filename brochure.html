@@ -298,6 +298,8 @@
       border-bottom: 1px solid #d8d4cb;
     }
     .contact-list li:last-child { border-bottom: none; }
+    /* the email is a live link on screen but prints as plain text */
+    .contact-list a { color: inherit; text-decoration: none; }
     .contact-list .lbl {
       font-family: var(--font-head);
       font-weight: 600;
@@ -378,7 +380,7 @@
         <li><span class="lbl">Website</span> shehthrive.com</li>
         <li><span class="lbl">Instagram</span> @the1sheh</li>
         <li><span class="lbl">YouTube</span> The S.H.E.H Company</li>
-        <li><span class="lbl">Email</span> the1sheh@gmail.com</li>
+        <li><span class="lbl">Email</span> <a href="mailto:the1sheh@gmail.com">the1sheh@gmail.com</a></li>
       </ul>
     </div>
 

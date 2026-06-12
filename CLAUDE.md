@@ -31,6 +31,13 @@ These rules apply to every session working in this repository.
    short form, but never exclusively in place of the full quote: the
    full quote is the primary representation of the brand.
 
+## Status summary rule
+
+6. **At the end of every completed task, update STATUS.md to reflect the
+   current project state before stopping for owner review.** STATUS.md
+   must always be accurate enough to fully brief a brand-new session
+   with no other context.
+
 ## Context
 
 - The responsive navigation menu (`.site-nav`, with hamburger toggle on
