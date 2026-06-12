@@ -25,6 +25,6 @@ whole bracket — including the brackets — with the real words.
 
 | # | What was needed | Answer used |
 |---|------------------|-------------|
-| 1 | Company contact email | the1sheh@gmail.com (updated from SHEH.thrive@gmail.com) |
+| 1 | Company contact email | the1sheh@gmail.com |
 | 2–4 | Bar names & flavors | Preliminary lineup from the website: First Light (peanut butter & dark chocolate), The Grind (coffee & cacao), Last Rep (salted caramel & almond) — marked as subject to change |
 | 5 | One-line ingredient summary | Flavor-based only: "Flavors built around peanut butter, dark chocolate, coffee, cacao, salted caramel, and almond." Full ingredient list still to come at launch |
