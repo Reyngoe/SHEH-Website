@@ -14,10 +14,7 @@ whole bracket — including the brackets — with the real words.
 
 ## Queued for the final task (placeholder sweep)
 
-- [ ] Make the email address in `brochure.html` (About/Contact panel) a
-      clickable `mailto:the1sheh@gmail.com` link.
-- [ ] Add the same email as a `mailto:` link in the `index.html` footer,
-      near the Instagram/YouTube links.
+*Done — both mailto links were added in the task 6 sweep (see Resolved).*
 
 ## Founder homework (not website tasks — just so it isn't forgotten)
 
@@ -37,6 +34,27 @@ whole bracket — including the brackets — with the real words.
   shortened spoken form) in Roy's answer about the bars. Founder wants
   to review before the brochure is printed.
 
+- **Motto punctuation (found in the task 6 sweep):** the spelled-out
+  motto appears two ways. Display uses periods — "Start Hard. End
+  Hard." (homepage hero, brochure cover, every footer). Prose uses a
+  comma — "Start Hard, End Hard" (FAQ answer #1, brochure FAQ panel,
+  the philosophy/FAQ meta descriptions, Roy's chat line, the welcome
+  email). Decide: one form everywhere, or keep periods for display and
+  comma for sentences. Nothing changed pending the decision.
+
+- **"Feed" vs "fuel" (found in the task 6 sweep):** the same tagline
+  ends differently in three places. Homepage and brochure say "We're
+  here to **feed** the one you already are"; Roy's chat says "We're
+  here to **fuel** the one you already are." Pick one verb. Nothing
+  changed pending the decision.
+
+- **Roy's "Earned, not given." (found in the task 6 sweep):** one of
+  Roy's replies uses "Earned, not given." — a near-variant of the
+  flagship saying "Built not given" (different word, plus a comma the
+  finalized form doesn't have). Decide whether Roy should say "Built
+  not given" or keep his variation. Nothing changed pending the
+  decision.
+
 ## Resolved
 
 | # | What was needed | Answer used |
@@ -45,3 +63,5 @@ whole bracket — including the brackets — with the real words.
 | 2–4 | Bar names & flavors | Preliminary lineup from the website: First Light (peanut butter & dark chocolate), The Grind (coffee & cacao), Last Rep (salted caramel & almond) — marked as subject to change |
 | 5 | One-line ingredient summary | Flavor-based only: "Flavors built around peanut butter, dark chocolate, coffee, cacao, salted caramel, and almond." Full ingredient list still to come at launch |
 | 6 | Founder first names for the email sign-off | Jacob & Patrick |
+| 7 | Email as a clickable link in the brochure contact panel | Done in the task 6 sweep — mailto:the1sheh@gmail.com (prints as plain text) |
+| 8 | Email link in the homepage footer | Done in the task 6 sweep — "Email" link with envelope icon next to Instagram/YouTube |

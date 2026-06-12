@@ -1,8 +1,8 @@
 # SHEH Website Project — Status Summary
 
-*Last updated: 2026-06-12. This file briefs a brand-new session (or person)
-with no other context. Update it at the end of every completed task
-(CLAUDE.md rule 6).*
+*Last updated: 2026-06-12 (after the task 6 site-wide sweep). This file
+briefs a brand-new session (or person) with no other context. Update it
+at the end of every completed task (CLAUDE.md rule 6).*
 
 ## Project basics
 
@@ -33,9 +33,12 @@ with no other context. Update it at the end of every completed task
 - **`index.html` (Home):** one-page landing — product cards for the three
   bars (with the "preliminary lineup" footnote), Mailchimp email signup
   (inline confirmation, duplicate/double-submit handling), footer with
-  real Instagram and YouTube links, and **Old Man Roy**, the SHEH mentor
-  chat (`mentor.js` + `mentor-words.js`); Roy's answer about the bars
-  includes a spoken short form of the preliminary disclaimer.
+  real Instagram and YouTube links plus an Email mailto link
+  (the1sheh@gmail.com, added in task 6), and **Old Man Roy**, the SHEH
+  mentor chat (`mentor.js` + `mentor-words.js`); Roy's answer about the
+  bars includes a spoken short form of the preliminary disclaimer. The
+  footer copyright now reads "The S.H.E.H Company" (formal form) like
+  every other page.
 - **`our-story.html` (Our Story):** founders' story page, written in the
   founders' "we" voice (the standing exception to the second-person rule).
 - **`philosophy.html` (Philosophy):** the "Start Hard, End Hard"
@@ -54,7 +57,10 @@ with no other context. Update it at the end of every completed task
   (company-"we" voice allowed here).
 - **`brochure.html`:** printable tri-fold sales brochure; the site nav on
   it is screen-only and never prints. Carries the bar lineup and the
-  preliminary-flavors footnote.
+  preliminary-flavors footnote. The contact-panel email is now a live
+  mailto link on screen (prints as plain text). Both QR codes were
+  machine-verified in task 6: they decode to exactly
+  https://shehthrive.com and https://www.instagram.com/the1sheh.
 - **Navigation:** responsive menu (`.site-nav`, hamburger on mobile) on
   all five pages, order **Home, Our Story, Philosophy, FAQ** — identical
   everywhere except the `aria-current="page"` highlight.
@@ -76,28 +82,48 @@ with no other context. Update it at the end of every completed task
 6. At the end of every completed task, update STATUS.md before stopping
    for owner review; it must fully brief a new session on its own.
 
+## Task 6 sweep — done (2026-06-12)
+
+The site-wide verification/cleanup pass is complete. Verified clean:
+naming forms (SHEH / S.H.E.H / The S.H.E.H Company) everywhere; the
+signature quote character-for-character in all six places it appears
+(philosophy, our-story, brochure, three Roy lines, plus the content
+kit); "Built not given" only in its finalized no-comma form; "Harder
+than yesterday" used only as a short form with the full quote present;
+second-person voice holding everywhere it should; all internal nav and
+anchor links; both brochure QR codes (machine-decoded). Changed: the
+two mailto links (homepage footer + brochure), the homepage copyright
+line fixed to the formal "The S.H.E.H Company", and `flex-wrap` added
+to the homepage footer so the longer link row wraps on small phones.
+External URLs (Instagram, YouTube, Mailchimp) could not be live-tested
+from the build environment (network-restricted); verified by
+inspection against the known handles. A **tone alignment report**
+(philosophy page as gold standard) was delivered in chat for the
+owner's per-page dial-in passes; the three concrete inconsistencies it
+surfaced (motto punctuation, feed-vs-fuel, Roy's "Earned, not given")
+are logged in PENDING.md as decisions.
+
 ## PENDING.md current state
 
 - **Open `[PENDING]` placeholders:** none.
-- **Queued for task 6:** make the email in `brochure.html`
-  (About/Contact panel) a clickable `mailto:the1sheh@gmail.com` link; add
-  the same mailto link to the `index.html` footer near the social links.
+- **Awaiting founder decisions (from the task 6 sweep):** motto
+  punctuation ("Start Hard. End Hard." vs "Start Hard, End Hard" in
+  prose); "feed" vs "fuel ... the one you already are"; whether Roy's
+  "Earned, not given." should become "Built not given".
+- **Awaiting founder review:** placement of the preliminary-flavor-lineup
+  disclaimer (brochure, product cards, Roy's spoken answer) — review
+  before printing the brochure.
 - **Founder homework (business, not website):** research California
   cottage food / home-kitchen rules before selling publicly; decide bar
   pricing before launch (FAQ says "not set yet — announced at launch").
-  Also still pending from earlier discussions: real product photos.
-- **Awaiting founder review:** placement of the preliminary-flavor-lineup
-  disclaimer (under the bar list in the brochure, under the product cards
-  on the site, and in Roy's spoken answer) — review before printing the
-  brochure.
+  Also still pending: real product/founder photos (the four marked
+  photo-slot placeholders on the homepage stay until photos exist).
 
 ## What remains
 
-- **Task 6 — the final placeholder sweep:** site-wide pass enforcing the
-  second-person voice rule, checking SHEH/S.H.E.H/The S.H.E.H Company
-  naming forms, verifying the signature quote appears word-for-word, the
-  two mailto links above, and any leftover filler text. Owner will send
-  the finalized task 6 scope.
-- **Note:** the owner plans additional dial-in passes on other pages
-  (similar to the Philosophy revision) before calling the site final —
-  so task 6 may not be the true last pass.
+- Owner reviews the task 6 results and the tone alignment report, then
+  runs **per-page dial-in passes** (like the Philosophy revision) on the
+  homepage, Our Story, FAQ, brochure, and Roy's lines before calling the
+  site final.
+- The three PENDING decisions above, plus photos and the brochure
+  disclaimer sign-off.
