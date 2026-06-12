@@ -5,9 +5,6 @@ shehthrive.com. To use it: in Mailchimp, set up a "welcome new
 subscribers" automation and paste the body in. Pick whichever subject
 line you like best (A is recommended).
 
-One placeholder to fill before sending: the sign-off names at the
-bottom — see PENDING.md.
-
 ---
 
 **Subject A (recommended):** You're in. Here's what you just joined.
@@ -44,7 +41,7 @@ earn it.
 Start hard today, be harder than yesterday, for today is yesterday's
 tomorrow.
 
-— [PENDING: founder first names]
+— Jacob & Patrick
 The S.H.E.H Company
 shehthrive.com
 
