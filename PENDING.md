@@ -10,7 +10,16 @@ whole bracket — including the brackets — with the real words.
 
 ## Open items
 
-*None right now.*
+| # | What's needed | Where it appears |
+|---|----------------|------------------|
+| 6 | Founder first names for the email sign-off | `content/welcome-email.md` — bottom of the email body |
+
+## Queued for the final task (placeholder sweep)
+
+- [ ] Make the email address in `brochure.html` (About/Contact panel) a
+      clickable `mailto:the1sheh@gmail.com` link.
+- [ ] Add the same email as a `mailto:` link in the `index.html` footer,
+      near the Instagram/YouTube links.
 
 ## Awaiting founder review (not facts — decisions)
 
