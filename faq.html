@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — SHEH</title>
+  <meta name="description" content="Straight answers about SHEH protein bars: what's in them, what's not, how to get one, and what Start Hard, End Hard means.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Shares the look of index.html: charcoal / slate / sand, ember accent */
+    :root {
+      --charcoal: #1c1e21;
+      --charcoal-deep: #141518;
+      --slate: #3b4248;
+      --slate-light: #5c656d;
+      --sand: #d8c9ae;
+      --sand-light: #ece4d3;
+      --bone: #f5f1e8;
+      --ember: #c75b2a;
+      --ember-dark: #a8481e;
+      --font-head: "Oswald", "Arial Narrow", sans-serif;
+      --font-body: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--charcoal);
+      color: var(--bone);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2 {
+      font-family: var(--font-head);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+    }
+
+    a { color: inherit; }
+
+    .wrap { width: 100%; max-width: 44rem; margin: 0 auto; padding: 0 1.25rem; }
+
+    .kicker {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--ember);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ---------- page hero ---------- */
+    .faq-hero {
+      position: relative;
+      text-align: center;
+      padding: 5.5rem 0 6.5rem;
+      background: linear-gradient(180deg, var(--charcoal-deep) 0%, var(--charcoal) 100%);
+      overflow: hidden;
+    }
+    .faq-hero h1 { font-size: clamp(2.2rem, 9vw, 4rem); font-weight: 700; }
+    .faq-hero p.sub {
+      max-width: 28rem;
+      margin: 1rem auto 0;
+      color: var(--sand-light);
+    }
+    .home-link {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--sand-light);
+      text-decoration: none;
+      padding: 0.5rem;
+    }
+    .home-link:hover { color: var(--ember); }
+    .ridge {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 10vh; min-height: 60px;
+      pointer-events: none;
+      background: var(--charcoal);
+      opacity: 0.9;
+      clip-path: polygon(0 65%, 15% 40%, 30% 70%, 45% 35%, 58% 62%, 72% 38%, 85% 58%, 100% 42%, 100% 100%, 0 100%);
+    }
+
+    /* ---------- FAQ list ---------- */
+    .faq-section { padding: 3.5rem 0 4.5rem; }
+
+    .faq-item {
+      background: var(--charcoal-deep);
+      border: 1px solid var(--slate);
+      margin-bottom: 0.75rem;
+    }
+    .faq-item summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.05rem 1.25rem;
+      cursor: pointer;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--bone);
+      list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+";
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      color: var(--ember);
+      flex-shrink: 0;
+      transition: transform 0.15s ease;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item summary:hover { color: var(--sand); }
+    .faq-item p {
+      padding: 0 1.25rem 1.15rem;
+      color: var(--sand-light);
+      font-size: 0.98rem;
+    }
+    .faq-item p a { color: var(--sand); }
+    .faq-item p a:hover { color: var(--ember); }
+
+    /* ---------- still asking ---------- */
+    .still {
+      text-align: center;
+      padding: 0 0 4.5rem;
+    }
+    .still p { color: var(--sand-light); max-width: 28rem; margin: 0 auto; }
+    .still a { color: var(--sand); }
+    .still a:hover { color: var(--ember); }
+
+    /* ---------- footer (matches index) ---------- */
+    footer {
+      background: var(--charcoal-deep);
+      border-top: 1px solid var(--slate);
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+    .footer-brand {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      color: var(--sand);
+    }
+    .footer-links {
+      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--sand-light);
+      text-decoration: none;
+      padding: 0.5rem 0.25rem;
+    }
+    .footer-links a:hover { color: var(--ember); }
+    .footer-fine { font-size: 0.8rem; color: var(--slate-light); }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <header class="faq-hero">
+    <a class="home-link" href="index.html">&larr; SHEH</a>
+    <div class="wrap">
+      <span class="kicker">Straight Answers</span>
+      <h1>FAQ</h1>
+      <p class="sub">No fine print, no runaround. What we know, you know. What we don't know yet, we say so.</p>
+    </div>
+    <div class="ridge" aria-hidden="true"></div>
+  </header>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq-section">
+    <div class="wrap">
+
+      <details class="faq-item" open>
+        <summary>What does SHEH mean?</summary>
+        <p>Start Hard, End Hard. Life is hard — early alarms, kids, work, responsibility. We make fuel for the men who meet it.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much protein? What are the macros?</summary>
+        <p>Straight answer: the final numbers come with the final recipe, and we won't print a number we haven't earned. The engine is whey protein — we're testing isolate to get the most protein per bar. Full macros publish at launch.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What's NOT in the bars?</summary>
+        <p>Zero preservatives. Zero artificial flavors. And never artificial sweeteners. We're building them to be shelf-stable without cutting those corners. The full ingredient list goes public at launch.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do they contain nuts?</summary>
+        <p>Yes. The current lineup is built on peanuts and almonds. If you have a nut allergy, these bars are not for you.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Are they vegan, gluten-free, or keto?</summary>
+        <p>No. These bars aren't built around special diets — they're built to fuel. Whey protein means dairy, so they're not vegan and won't be.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I get one today?</summary>
+        <p>Through us, directly: join the email list at <a href="index.html#signup">shehthrive.com</a>, or DM <a href="https://www.instagram.com/the1sheh" target="_blank" rel="noopener">@the1sheh</a> on Instagram. When the bars launch, it'll be through us or this website only.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much will they cost?</summary>
+        <p>Not set yet. Price gets announced at launch, and the email list hears everything first.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>When do they launch?</summary>
+        <p>When they're ready. No date yet — we won't rush the standard to hit a deadline.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Will you ship, or is it local only?</summary>
+        <p>The plan is both: online orders and local San Diego pickup, as far as we can afford to reach the people who want them.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Who makes these?</summary>
+        <p>Jacob and Patrick — two friends since middle school, full-time jobs, small batches, two kitchens, San Diego. <a href="our-story.html">Read the whole story.</a></p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I suggest a flavor?</summary>
+        <p>Absolutely. DM <a href="https://www.instagram.com/the1sheh" target="_blank" rel="noopener">@the1sheh</a>. The lineup isn't final, and we listen.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>I run a gym or a shop — can I stock SHEH?</summary>
+        <p>When the bars land, we want them where hard work happens. Email <a href="mailto:the1sheh@gmail.com">the1sheh@gmail.com</a> and we'll talk.</p>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- ============ STILL ASKING ============ -->
+  <section class="still">
+    <div class="wrap">
+      <p>Didn't find your answer? Talk to Roy in the corner, or email <a href="mailto:the1sheh@gmail.com">the1sheh@gmail.com</a>.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap">
+      <p class="footer-brand">SHEH</p>
+      <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="our-story.html">Our Story</a>
+        <a href="https://www.instagram.com/the1sheh" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@the1sheh" target="_blank" rel="noopener">YouTube</a>
+      </nav>
+      <p class="footer-fine">&copy; 2026 The S.H.E.H Company. Start Hard. End Hard.</p>
+    </div>
+  </footer>
+
+  <!-- Old Man Roy rides along on this page too -->
+  <script src="mentor-words.js" defer></script>
+  <script src="mentor.js" defer></script>
+
+</body>
+</html>

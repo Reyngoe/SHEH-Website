@@ -19,6 +19,15 @@ whole bracket — including the brackets — with the real words.
 - [ ] Add the same email as a `mailto:` link in the `index.html` footer,
       near the Instagram/YouTube links.
 
+## Founder homework (not website tasks — just so it isn't forgotten)
+
+- [ ] Before selling publicly, look into California's cottage food /
+      home-kitchen rules (registration and label requirements for food
+      made in a home kitchen). Nothing about this appears on the site;
+      this is a business to-do, not a website one.
+- [ ] Decide bar pricing before launch. The FAQ currently says
+      "not set yet — announced at launch."
+
 ## Awaiting founder review (not facts — decisions)
 
 - Disclaimer placement: a small footnote — "Flavor lineup shown is
