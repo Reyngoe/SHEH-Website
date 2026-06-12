@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ — SHEH</title>
-  <meta name="description" content="Straight answers about SHEH protein bars: what's in them, what's not, how to get one, and what Start Hard, End Hard means.">
+  <title>The Philosophy — SHEH</title>
+  <meta name="description" content="Start Hard, End Hard — the SHEH manifesto. Life is hard. Become the kind of man who meets it.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -149,15 +149,15 @@
     }
 
     /* ---------- page hero ---------- */
-    .faq-hero {
+    .phil-hero {
       position: relative;
       text-align: center;
-      padding: 5.5rem 0 6.5rem;
+      padding: 7rem 0 6.5rem;
       background: linear-gradient(180deg, var(--charcoal-deep) 0%, var(--charcoal) 100%);
       overflow: hidden;
     }
-    .faq-hero h1 { font-size: clamp(2.2rem, 9vw, 4rem); font-weight: 700; }
-    .faq-hero p.sub {
+    .phil-hero h1 { font-size: clamp(2.1rem, 8.5vw, 3.8rem); font-weight: 700; }
+    .phil-hero p.sub {
       max-width: 28rem;
       margin: 1rem auto 0;
       color: var(--sand-light);
@@ -172,56 +172,126 @@
       clip-path: polygon(0 65%, 15% 40%, 30% 70%, 45% 35%, 58% 62%, 72% 38%, 85% 58%, 100% 42%, 100% 100%, 0 100%);
     }
 
-    /* ---------- FAQ list ---------- */
-    .faq-section { padding: 3.5rem 0 4.5rem; }
-
-    .faq-item {
-      background: var(--charcoal-deep);
-      border: 1px solid var(--slate);
-      margin-bottom: 0.75rem;
+    /* ---------- manifesto ---------- */
+    .creed-section {
+      padding: 3.5rem 0 1rem;
+      position: relative;
+      overflow: hidden;
     }
-    .faq-item summary {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1.05rem 1.25rem;
-      cursor: pointer;
+    .creed-section .wrap { position: relative; z-index: 1; }
+
+    /* ghost typography: the short form of the signature quote, barely
+       visible behind the pillars. The full quote remains the readable
+       centerpiece below. */
+    .ghost {
+      position: absolute;
+      z-index: 0;
+      font-family: var(--font-head);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 0.95;
+      font-size: clamp(5rem, 18vw, 11rem);
+      letter-spacing: 0.04em;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(245, 241, 232, 0.055);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+    @supports not (-webkit-text-stroke: 1px black) {
+      .ghost { color: rgba(245, 241, 232, 0.04); }
+    }
+    .ghost--1 { top: 5rem; left: -0.75rem; }
+    .ghost--2 { top: 42%; right: -1rem; }
+    .ghost--3 { bottom: 3rem; left: -0.75rem; }
+
+    .creed {
+      margin-bottom: 3.25rem;
+    }
+    .creed .num {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.3em;
+      color: var(--ember);
+    }
+    .creed h2 {
+      font-size: clamp(1.5rem, 5vw, 2.1rem);
+      font-weight: 700;
+      margin: 0.4rem 0 0.9rem;
+    }
+    .creed p {
+      color: var(--sand-light);
+      font-size: 1.03rem;
+      margin-bottom: 0.9rem;
+    }
+    .creed p strong { color: var(--bone); font-weight: 600; }
+
+    /* ---------- quote centerpiece ---------- */
+    .quote-section {
+      background: var(--charcoal-deep);
+      text-align: center;
+      padding: 4.5rem 0;
+    }
+    .quote-block {
+      max-width: 36rem;
+      margin: 0 auto;
       font-family: var(--font-head);
       font-weight: 600;
-      font-size: 1.05rem;
+      font-size: clamp(1.35rem, 4.5vw, 1.9rem);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--bone);
-      list-style: none;
+      letter-spacing: 0.06em;
+      line-height: 1.5;
+      color: var(--sand);
     }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after {
-      content: "+";
-      font-family: var(--font-head);
-      font-size: 1.3rem;
-      color: var(--ember);
-      flex-shrink: 0;
-      transition: transform 0.15s ease;
-    }
-    .faq-item[open] summary::after { transform: rotate(45deg); }
-    .faq-item summary:hover { color: var(--sand); }
-    .faq-item p {
-      padding: 0 1.25rem 1.15rem;
+    .quote-block .mark { color: var(--ember); }
+    .quote-section p.expl {
+      max-width: 30rem;
+      margin: 1.75rem auto 0;
       color: var(--sand-light);
-      font-size: 0.98rem;
     }
-    .faq-item p a { color: var(--sand); }
-    .faq-item p a:hover { color: var(--ember); }
 
-    /* ---------- still asking ---------- */
-    .still {
+    /* ---------- CTA ---------- */
+    .cta {
       text-align: center;
-      padding: 0 0 4.5rem;
+      padding: 4rem 0 4.5rem;
     }
-    .still p { color: var(--sand-light); max-width: 28rem; margin: 0 auto; }
-    .still a { color: var(--sand); }
-    .still a:hover { color: var(--ember); }
+    .cta p { color: var(--sand-light); max-width: 28rem; margin: 0 auto 2rem; }
+    .btn {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 1rem;
+      color: var(--bone);
+      background: var(--ember);
+      border: none;
+      padding: 0.95rem 2.4rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .btn:hover { background: var(--ember-dark); transform: translateY(-2px); }
+
+    .trail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 0 auto 3rem;
+      max-width: 18rem;
+    }
+    .trail::before, .trail::after {
+      content: "";
+      flex: 1;
+      border-top: 2px dashed var(--slate-light);
+    }
+    .trail-peak {
+      width: 16px; height: 14px;
+      background: var(--ember);
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    }
 
     /* ---------- footer (matches index) ---------- */
     footer {
@@ -270,93 +340,82 @@
       <ul class="site-nav-menu" id="site-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="our-story.html">Our Story</a></li>
-        <li><a href="philosophy.html">Philosophy</a></li>
-        <li><a href="faq.html" aria-current="page">FAQ</a></li>
+        <li><a href="philosophy.html" aria-current="page">Philosophy</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- ============ HERO ============ -->
-  <header class="faq-hero">
+  <header class="phil-hero">
     <div class="wrap">
-      <span class="kicker">Straight Answers</span>
-      <h1>FAQ</h1>
-      <p class="sub">No fine print, no runaround. What we know, you know. What we don't know yet, we say so.</p>
+      <span class="kicker">The Philosophy</span>
+      <h1>Start Hard. End Hard.</h1>
+      <p class="sub">The whole belief, written down.</p>
     </div>
     <div class="ridge" aria-hidden="true"></div>
   </header>
 
-  <!-- ============ FAQ ============ -->
-  <section class="faq-section">
+  <!-- ============ MANIFESTO ============ -->
+  <section class="creed-section">
+    <div class="ghost ghost--1" aria-hidden="true">Harder</div>
+    <div class="ghost ghost--2" aria-hidden="true">Than</div>
+    <div class="ghost ghost--3" aria-hidden="true">Yesterday</div>
     <div class="wrap">
 
-      <details class="faq-item" open>
-        <summary>What does SHEH mean?</summary>
-        <p>Start Hard, End Hard. Life is hard — early alarms, kids, work, responsibility. We make fuel for the men who meet it.</p>
-      </details>
+      <article class="creed">
+        <span class="num">01</span>
+        <h2>Built not given</h2>
+        <p>You came into this world with nothing — couldn't walk, couldn't speak, didn't know a thing. <strong>Everything you are, you built.</strong></p>
+        <p>That's the deal: life hands you nothing easy, and that's not a flaw. Easy pays nothing. The reward has always lived on the hard side of things.</p>
+      </article>
 
-      <details class="faq-item">
-        <summary>How much protein? What are the macros?</summary>
-        <p>Straight answer: the final numbers come with the final recipe, and we won't print a number we haven't earned. The engine is whey protein — we're testing isolate to get the most protein per bar. Full macros publish at launch.</p>
-      </details>
+      <article class="creed">
+        <span class="num">02</span>
+        <h2>Start hard</h2>
+        <p>Whatever you're going to do — do it like you mean it. Nothing good was ever built on half effort. Not a trade, not a marriage, not a skill, not a name.</p>
+        <p>Starting hard means showing up early, caring about the work, and giving it your whole heart from the first hour. <strong>If it's worth doing, it's worth doing all the way.</strong></p>
+      </article>
 
-      <details class="faq-item">
-        <summary>What's NOT in the bars?</summary>
-        <p>Zero preservatives. Zero artificial flavors. And never artificial sweeteners. We're building them to be shelf-stable without cutting those corners. The full ingredient list goes public at launch.</p>
-      </details>
+      <article class="creed">
+        <span class="num">03</span>
+        <h2>End hard</h2>
+        <p>Anybody can start. Ending hard is what separates you. It means finishing what you started — and finishing it the way you began it, with your whole heart still in it.</p>
+        <p>If there's a finish line, you're crossing it. Not limping across, not coasting in — crossing it the way you left the gate. <strong>Your word is the start. Keeping it is the end.</strong></p>
+      </article>
 
-      <details class="faq-item">
-        <summary>Do they contain nuts?</summary>
-        <p>Yes. The current lineup is built on peanuts and almonds. If you have a nut allergy, these bars are not for you.</p>
-      </details>
+      <article class="creed">
+        <span class="num">04</span>
+        <h2>Hard not harsh</h2>
+        <p>Your path gets tested two ways. The world tries to pull you off it — a thousand distractions, all of them louder than what matters. And the road itself tries to harden you into something ugly. Hold against both.</p>
+        <p>Keep your eyes on what you chose, and keep your heart right while you chase it. <strong>Hard doesn't mean harsh.</strong> Be a warrior in a garden — fierce enough to take any city, wise enough to know the only one worth conquering is yourself.</p>
+      </article>
 
-      <details class="faq-item">
-        <summary>Are they vegan, gluten-free, or keto?</summary>
-        <p>No. These bars aren't built around special diets — they're built to fuel. Whey protein means dairy, so they're not vegan and won't be.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>How do I get one today?</summary>
-        <p>Through us, directly: join the email list at <a href="index.html#signup">shehthrive.com</a>, or DM <a href="https://www.instagram.com/the1sheh" target="_blank" rel="noopener">@the1sheh</a> on Instagram. When the bars launch, it'll be through us or this website only.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>How much will they cost?</summary>
-        <p>Not set yet. Price gets announced at launch, and the email list hears everything first.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>When do they launch?</summary>
-        <p>When they're ready. No date yet — we won't rush the standard to hit a deadline.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Will you ship, or is it local only?</summary>
-        <p>The plan is both: online orders and local San Diego pickup, as far as we can afford to reach the people who want them.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Who makes these?</summary>
-        <p>Jacob and Patrick — two friends since middle school, full-time jobs, small batches, two kitchens, San Diego. <a href="our-story.html">Read the whole story.</a></p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can I suggest a flavor?</summary>
-        <p>Absolutely. DM <a href="https://www.instagram.com/the1sheh" target="_blank" rel="noopener">@the1sheh</a>. The lineup isn't final, and we listen.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>I run a gym or a shop — can I stock SHEH?</summary>
-        <p>When the bars land, we want them where hard work happens. Email <a href="mailto:the1sheh@gmail.com">the1sheh@gmail.com</a> and we'll talk.</p>
-      </details>
+      <article class="creed">
+        <span class="num">05</span>
+        <h2>The Long Game</h2>
+        <p>Some roads have finish lines. Life isn't one of them. There's no trophy at the end of this walk — the walk is the point. So play the long game.</p>
+        <p>Rest when you need to — that's not weakness, that's maintenance. Change the route if the route was wrong — recalibrating isn't quitting, it's how you stay in the fight. Take care of yourself, and take care of business, all the way down the road.</p>
+        <p>You don't quit on your goals, and you don't quit on who you are. This isn't a phase or a program. It's a lifestyle. It's a commitment. <strong>It's being SHEH.</strong></p>
+      </article>
 
     </div>
   </section>
 
-  <!-- ============ STILL ASKING ============ -->
-  <section class="still">
+  <!-- ============ THE QUOTE ============ -->
+  <section class="quote-section">
     <div class="wrap">
-      <p>Didn't find your answer? Talk to Roy in the corner, or email <a href="mailto:the1sheh@gmail.com">the1sheh@gmail.com</a>.</p>
+      <p class="quote-block"><span class="mark">&ldquo;</span>Start hard today, be harder than yesterday, for today is yesterday&rsquo;s tomorrow.<span class="mark">&rdquo;</span></p>
+      <p class="expl">Today is yesterday's tomorrow: the future you promised yourself yesterday is this morning, already here. There is no "later." Later is now.</p>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta">
+    <div class="wrap">
+      <div class="trail" aria-hidden="true"><span class="trail-peak"></span></div>
+      <p>This is what the bars are for — fuel for the men living it. Built by <a href="our-story.html" style="color: var(--sand);">two friends</a> who hold themselves to the same code.</p>
+      <a class="btn" href="index.html#signup">Be First in Line</a>
     </div>
   </section>
 
@@ -367,6 +426,7 @@
       <nav class="footer-links">
         <a href="index.html">Home</a>
         <a href="our-story.html">Our Story</a>
+        <a href="faq.html">FAQ</a>
         <a href="https://www.instagram.com/the1sheh" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.youtube.com/@the1sheh" target="_blank" rel="noopener">YouTube</a>
       </nav>
