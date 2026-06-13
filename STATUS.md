@@ -1,8 +1,8 @@
 # SHEH Website Project — Status Summary
 
-*Last updated: 2026-06-12 (after the task 6 site-wide sweep). This file
+*Last updated: 2026-06-13 (after the homepage dial-in pass). This file
 briefs a brand-new session (or person) with no other context. Update it
-at the end of every completed task (CLAUDE.md rule 6).*
+at the end of every completed task (CLAUDE.md rule 8).*
 
 ## Project basics
 
@@ -30,15 +30,25 @@ at the end of every completed task (CLAUDE.md rule 6).*
 
 ## Completed and live, page by page
 
-- **`index.html` (Home):** one-page landing — product cards for the three
-  bars (with the "preliminary lineup" footnote), Mailchimp email signup
-  (inline confirmation, duplicate/double-submit handling), footer with
-  real Instagram and YouTube links plus an Email mailto link
-  (the1sheh@gmail.com, added in task 6), and **Old Man Roy**, the SHEH
-  mentor chat (`mentor.js` + `mentor-words.js`); Roy's answer about the
-  bars includes a spoken short form of the preliminary disclaimer. The
-  footer copyright now reads "The S.H.E.H Company" (formal form) like
-  every other page.
+- **`index.html` (Home):** one-page landing — hero ("Start Hard. End
+  Hard."), **The Code section (dial-in pass done 2026-06-13):** now a
+  five-entry condensed creed mirroring the Philosophy pillars (Built not
+  given · Start hard · End hard · Hard not harsh · The Long Game, each a
+  one-liner with bolded title), closed by a "Read the full creed" link to
+  philosophy.html and, beneath the trail divider as the section's closing
+  beat, the full signature quote set quietly and centered. The old
+  "Life starts hard." headline and three-line code are gone; the section
+  is now titled simply "The Code". Product cards for the three bars (with
+  the "preliminary lineup" footnote) — First Light's tagline is now
+  "Peanut butter & dark chocolate. For the first hour." About section
+  says "We're here to **fuel** the one you already are" (founder ruling).
+  Mailchimp email signup (inline confirmation, duplicate/double-submit
+  handling), footer with real Instagram and YouTube links plus an Email
+  mailto link (the1sheh@gmail.com), and **Old Man Roy**, the SHEH mentor
+  chat (`mentor.js` + `mentor-words.js`); Roy's answer about the bars
+  includes a spoken short form of the preliminary disclaimer. Footer
+  copyright reads "The S.H.E.H Company" (formal form) like every other
+  page.
 - **`our-story.html` (Our Story):** founders' story page, written in the
   founders' "we" voice (the standing exception to the second-person rule).
 - **`philosophy.html` (Philosophy):** the "Start Hard, End Hard"
@@ -61,6 +71,8 @@ at the end of every completed task (CLAUDE.md rule 6).*
   mailto link on screen (prints as plain text). Both QR codes were
   machine-verified in task 6: they decode to exactly
   https://shehthrive.com and https://www.instagram.com/the1sheh.
+  Its Our Story panel now also says "fuel the one you already are"
+  (same founder ruling as the homepage).
 - **Navigation:** responsive menu (`.site-nav`, hamburger on mobile) on
   all five pages, order **Home, Our Story, Philosophy, FAQ** — identical
   everywhere except the `aria-current="page"` highlight.
@@ -79,7 +91,14 @@ at the end of every completed task (CLAUDE.md rule 6).*
    in the task 6 sweep.
 5. Flagship brand sayings as defined above; full quote is primary,
    "Harder than yesterday" short form never exclusive.
-6. At the end of every completed task, update STATUS.md before stopping
+6. Motto punctuation: periods — "Start Hard. End Hard." — for
+   display/standalone use (hero, covers, footers, merch); comma —
+   "Start Hard, End Hard" — only when it flows inside a sentence.
+   Both are correct in their context; intentional, not drift.
+7. Metaphor hierarchy: the road/walk is the philosophy metaphor (life,
+   the long game); the climb is the action metaphor (effort, training,
+   product). Both sanctioned; never mixed within a single line.
+8. At the end of every completed task, update STATUS.md before stopping
    for owner review; it must fully brief a new session on its own.
 
 ## Task 6 sweep — done (2026-06-12)
@@ -99,17 +118,39 @@ External URLs (Instagram, YouTube, Mailchimp) could not be live-tested
 from the build environment (network-restricted); verified by
 inspection against the known handles. A **tone alignment report**
 (philosophy page as gold standard) was delivered in chat for the
-owner's per-page dial-in passes; the three concrete inconsistencies it
-surfaced (motto punctuation, feed-vs-fuel, Roy's "Earned, not given")
-are logged in PENDING.md as decisions.
+owner's per-page dial-in passes.
+
+## Homepage dial-in pass — done (2026-06-13)
+
+The owner's first dial-in pass (homepage), with owner-approved copy
+used verbatim, plus the owner's rulings on the three tone-report
+decisions:
+
+- **The Code section** rebuilt as the five-entry condensed creed +
+  "Read the full creed" link + the full signature quote as the quiet,
+  centered closing beat (details in the index.html entry above).
+- **First Light tagline** is now "Peanut butter & dark chocolate. For
+  the first hour." The other two card taglines are unchanged.
+- **Feed → fuel:** "We're here to fuel the one you already are" on the
+  homepage and in the brochure (Roy already said "fuel") — the verb is
+  now consistent in all three places.
+- **Roy alignment:** Roy's "Earned, not given." reply in
+  `mentor-words.js` now uses the finalized flagship form "Built not
+  given." (no comma). Crisis-referral lines untouched.
+- **Two new standing rules added to CLAUDE.md** (motto punctuation and
+  metaphor hierarchy — rules 6 and 7; the STATUS.md rule is now rule 8).
+- Everything else on the homepage stayed as it was: hero, "Fuel for the
+  climb" header, signup section, footer.
+
+All three tone-report decisions are resolved and moved to the Resolved
+table in PENDING.md.
 
 ## PENDING.md current state
 
 - **Open `[PENDING]` placeholders:** none.
-- **Awaiting founder decisions (from the task 6 sweep):** motto
-  punctuation ("Start Hard. End Hard." vs "Start Hard, End Hard" in
-  prose); "feed" vs "fuel ... the one you already are"; whether Roy's
-  "Earned, not given." should become "Built not given".
+- **Awaiting founder decisions:** none — the three tone-report decisions
+  (motto punctuation, feed-vs-fuel, Roy's "Earned, not given") were
+  ruled on and applied in the homepage dial-in pass.
 - **Awaiting founder review:** placement of the preliminary-flavor-lineup
   disclaimer (brochure, product cards, Roy's spoken answer) — review
   before printing the brochure.
@@ -121,9 +162,7 @@ are logged in PENDING.md as decisions.
 
 ## What remains
 
-- Owner reviews the task 6 results and the tone alignment report, then
-  runs **per-page dial-in passes** (like the Philosophy revision) on the
-  homepage, Our Story, FAQ, brochure, and Roy's lines before calling the
-  site final.
-- The three PENDING decisions above, plus photos and the brochure
-  disclaimer sign-off.
+- Owner reviews the homepage dial-in pass (this task), then runs the
+  remaining **per-page dial-in passes** on Our Story, FAQ, the brochure,
+  and Roy's lines before calling the site final.
+- Photos and the brochure disclaimer sign-off (see PENDING.md).

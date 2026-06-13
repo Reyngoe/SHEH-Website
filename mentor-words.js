@@ -75,7 +75,7 @@ const ROY = {
       ],
       replies: [
         "Good. That's what showing up builds. Be proud tonight — and tell me, what's the next climb?",
-        "Earned, not given. Take a minute to feel it. Then set the bar one notch higher.",
+        "Built not given. Take a minute to feel it. Then set the bar one notch higher.",
         "That's not luck — that's stacked mornings paying out. Don't stop stacking.",
         "Proud of you. Now be careful: success is where most men ease off. What are you doing tomorrow to keep the streak?",
         "Write this one down. On the hard days coming, you'll need proof you're the kind of man who finishes.",

@@ -275,6 +275,34 @@
     }
     .code p strong { color: var(--bone); font-weight: 600; }
 
+    /* quiet link out to the full creed on the Philosophy page */
+    .code .code-link { margin-top: 1.9rem; }
+    .code .code-link a {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--ember);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ember);
+      padding-bottom: 0.15rem;
+    }
+    .code .code-link a:hover { color: var(--ember-dark); border-bottom-color: var(--ember-dark); }
+
+    /* the signature quote: the section's closing beat — quiet, centered */
+    .code .code-quote {
+      max-width: 30rem;
+      margin: 2rem auto 0;
+      font-family: var(--font-head);
+      font-weight: 500;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      line-height: 1.9;
+      color: var(--sand);
+    }
+
     /* trail divider: a dashed path with a peak marker, CSS only */
     .trail {
       display: flex;
@@ -543,12 +571,15 @@
   <!-- ============ THE CODE ============ -->
   <section class="code" id="code">
     <div class="wrap">
-      <span class="kicker">The Code</span>
-      <h2 class="section-title">Life starts hard.</h2>
-      <p><strong>Be hard enough to meet it.</strong> The early alarm, the school run, the long shift — that's the arena, and you're already in it.</p>
-      <p><strong>Don't quit.</strong> Not on your people, not on your word, not on yourself.</p>
-      <p><strong>Stay on the straight and narrow.</strong> Do the good things because they're hard. That's the whole code.</p>
+      <h2 class="section-title">The Code</h2>
+      <p><strong>Built not given.</strong> You came in with nothing. Everything you are, you built.</p>
+      <p><strong>Start hard.</strong> Whole effort, whole heart, from the first hour.</p>
+      <p><strong>End hard.</strong> Anybody can start. Finishing is what separates you.</p>
+      <p><strong>Hard not harsh.</strong> Be a warrior in a garden — strong enough for any fight, wise enough to need none.</p>
+      <p><strong>The Long Game.</strong> Rest. Recalibrate. But keep walking — the walk is the point.</p>
+      <p class="code-link"><a href="philosophy.html">Read the full creed</a></p>
       <div class="trail" aria-hidden="true"><span class="trail-peak"></span></div>
+      <p class="code-quote">&ldquo;Start hard today, be harder than yesterday, for today is yesterday&rsquo;s tomorrow.&rdquo;</p>
     </div>
   </section>
 
@@ -565,7 +596,7 @@
           <div class="photo-slot">[ Product photo<br>coming soon ]</div>
           <div class="card-body">
             <h3>First Light</h3>
-            <p class="flavor-note">Peanut butter &amp; dark chocolate. For the alarm you didn't snooze.</p>
+            <p class="flavor-note">Peanut butter &amp; dark chocolate. For the first hour.</p>
             <span class="badge">Coming Soon</span>
           </div>
         </article>
@@ -602,7 +633,7 @@
         <span class="kicker">Who We Are</span>
         <h2 class="section-title">Two friends, one standard</h2>
         <p>SHEH is two friends building something real. No investors, no playbook — just early mornings, kitchen-table batches, and a belief that ordinary men doing hard things right is worth backing.</p>
-        <p>We're not here to tell you how to be a man. We're here to feed the one you already are.</p>
+        <p>We're not here to tell you how to be a man. We're here to fuel the one you already are.</p>
         <a class="btn" href="our-story.html" style="margin-top: 0.5rem;">Read Our Story</a>
       </div>
       <!-- PHOTO PLACEHOLDER: replace with founders photo -->
