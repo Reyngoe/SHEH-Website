@@ -34,27 +34,6 @@ whole bracket — including the brackets — with the real words.
   shortened spoken form) in Roy's answer about the bars. Founder wants
   to review before the brochure is printed.
 
-- **Motto punctuation (found in the task 6 sweep):** the spelled-out
-  motto appears two ways. Display uses periods — "Start Hard. End
-  Hard." (homepage hero, brochure cover, every footer). Prose uses a
-  comma — "Start Hard, End Hard" (FAQ answer #1, brochure FAQ panel,
-  the philosophy/FAQ meta descriptions, Roy's chat line, the welcome
-  email). Decide: one form everywhere, or keep periods for display and
-  comma for sentences. Nothing changed pending the decision.
-
-- **"Feed" vs "fuel" (found in the task 6 sweep):** the same tagline
-  ends differently in three places. Homepage and brochure say "We're
-  here to **feed** the one you already are"; Roy's chat says "We're
-  here to **fuel** the one you already are." Pick one verb. Nothing
-  changed pending the decision.
-
-- **Roy's "Earned, not given." (found in the task 6 sweep):** one of
-  Roy's replies uses "Earned, not given." — a near-variant of the
-  flagship saying "Built not given" (different word, plus a comma the
-  finalized form doesn't have). Decide whether Roy should say "Built
-  not given" or keep his variation. Nothing changed pending the
-  decision.
-
 ## Resolved
 
 | # | What was needed | Answer used |
@@ -65,3 +44,6 @@ whole bracket — including the brackets — with the real words.
 | 6 | Founder first names for the email sign-off | Jacob & Patrick |
 | 7 | Email as a clickable link in the brochure contact panel | Done in the task 6 sweep — mailto:the1sheh@gmail.com (prints as plain text) |
 | 8 | Email link in the homepage footer | Done in the task 6 sweep — "Email" link with envelope icon next to Instagram/YouTube |
+| 9 | Motto punctuation (from the task 6 tone report) | Founder ruling: both forms are correct in context — periods ("Start Hard. End Hard.") for display/standalone use, comma ("Start Hard, End Hard") only inside a sentence. Now CLAUDE.md standing rule 6; no copy needed changing |
+| 10 | "Feed" vs "fuel" (from the task 6 tone report) | Founder ruling: **fuel**. Homepage and brochure changed to "We're here to fuel the one you already are" (Roy already said it that way) |
+| 11 | Roy's "Earned, not given." (from the task 6 tone report) | Founder ruling: aligned to the flagship form — Roy now says "Built not given." (no comma) in `mentor-words.js` |
