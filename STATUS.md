@@ -1,8 +1,9 @@
 # SHEH Website Project — Status Summary
 
-*Last updated: 2026-06-19 (after the Our Story dial-in pass). This file
-briefs a brand-new session (or person) with no other context. Update it
-at the end of every completed task (CLAUDE.md rule 8).*
+*Last updated: 2026-06-19 (after the Our Story dial-in pass + follow-up
+copy edits). This file briefs a brand-new session (or person) with no
+other context. Update it at the end of every completed task (CLAUDE.md
+rule 8).*
 
 ## Project basics
 
@@ -171,8 +172,10 @@ exception). What changed:
   Navy the long way).
 - **2023 origin** section: new copy (early risers, brutal hours, chasing
   cleaner fuel, made our own).
-- **"Two kitchens, the hard way":** expanded to three paragraphs,
-  introducing Rebeca's role and ending on "building it good, or not at all."
+- **"Two kitchens, the hard way":** expanded to three paragraphs, ending
+  on "building it good, or not at all." (Follow-up edit moved the Rebeca
+  mention out of this section's first paragraph; she is now named only in
+  the "Our People" section.)
 - **Closing section replaced:** the old "Wholesome and legit / The
   Standard" section is now **"Our People" → "The people behind us"**,
   thanking the people behind the founders.
@@ -181,6 +184,14 @@ exception). What changed:
   "Two friends, one standard" → **"Two friends, one code"** (sentence case
   to match the homepage's other headers) so it echoes the Our Story title.
   This was the only homepage change in the task.
+
+**Follow-up copy edits (same task, owner-approved):** split a run-on
+sentence in Jacob's bio into two; trimmed the Rebeca sentence out of the
+"Two kitchens" first paragraph (now "We try them, talk them over, and go
+again."); and expanded the "Our People" body — Rebeca's line now reads
+"jumping into the kitchen for batches or taste tests," and the close adds
+"You build it yourself, but you don't build it by yourself." before "Built
+not given, but never built alone."
 
 ## PENDING.md current state
 
