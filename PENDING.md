@@ -34,6 +34,12 @@ whole bracket — including the brackets — with the real words.
   shortened spoken form) in Roy's answer about the bars. Founder wants
   to review before the brochure is printed.
 
+- Patrick's bio and his family reference on the Our Story page
+  (`our-story.html`): the current wording is owner-approved placeholder
+  copy. Patrick to review and supply his own wording for both his bio
+  ("Built between shifts" section) and the "For Patrick…" line in the
+  "Our People" section before the page is considered final.
+
 ## Resolved
 
 | # | What was needed | Answer used |

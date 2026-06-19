@@ -1,6 +1,6 @@
 # SHEH Website Project — Status Summary
 
-*Last updated: 2026-06-13 (after the homepage dial-in pass). This file
+*Last updated: 2026-06-19 (after the Our Story dial-in pass). This file
 briefs a brand-new session (or person) with no other context. Update it
 at the end of every completed task (CLAUDE.md rule 8).*
 
@@ -51,6 +51,17 @@ at the end of every completed task (CLAUDE.md rule 8).*
   page.
 - **`our-story.html` (Our Story):** founders' story page, written in the
   founders' "we" voice (the standing exception to the second-person rule).
+  **Full content rebuild done 2026-06-19** with owner-approved copy: H1 is
+  now "Two Friends, One Code" (was "…One Standard"); the Foundation,
+  bios ("Built between shifts"), 2023 origin, and "Two kitchens, the hard
+  way" sections all carry new copy; the old "Wholesome and legit / The
+  Standard" closing section is replaced by an **"Our People"** section
+  ("The people behind us") thanking the circle behind the founders
+  (Rebeca by name for Jacob; family/friends for Patrick), closing on
+  "Built not given, but never built alone." Layout, kickers, the two CTA
+  buttons, and the signature-quote block are unchanged. Patrick's bio and
+  his family reference are owner-approved **placeholder** pending his own
+  wording (logged in PENDING.md).
 - **`philosophy.html` (Philosophy):** the "Start Hard, End Hard"
   manifesto, just revised with the **owner-finalized five pillars**:
   01 **Built not given** · 02 **Start hard** · 03 **End hard** ·
@@ -145,6 +156,32 @@ decisions:
 All three tone-report decisions are resolved and moved to the Resolved
 table in PENDING.md.
 
+## Our Story dial-in pass — done (2026-06-19)
+
+The owner's second per-page dial-in pass (Our Story), owner-approved copy
+used verbatim. The page keeps its "we" voice (the standing second-person
+exception). What changed:
+
+- **H1** "Two Friends, One Standard" → **"Two Friends, One Code."**
+- **The Foundation** section: new copy (best friends since middle school,
+  Mt. Woodson hikes, fishing San Diego County, the event crew, twenty-some
+  years).
+- **Bios** ("Built between shifts"): rewritten for both founders — Jacob
+  (family man first, builder's wiring) and Patrick (earned his way to the
+  Navy the long way).
+- **2023 origin** section: new copy (early risers, brutal hours, chasing
+  cleaner fuel, made our own).
+- **"Two kitchens, the hard way":** expanded to three paragraphs,
+  introducing Rebeca's role and ending on "building it good, or not at all."
+- **Closing section replaced:** the old "Wholesome and legit / The
+  Standard" section is now **"Our People" → "The people behind us"**,
+  thanking the people behind the founders.
+- Signature quote and both CTA buttons unchanged, after the new section.
+- **Consistency fix on `index.html`:** the about-section header
+  "Two friends, one standard" → **"Two friends, one code"** (sentence case
+  to match the homepage's other headers) so it echoes the Our Story title.
+  This was the only homepage change in the task.
+
 ## PENDING.md current state
 
 - **Open `[PENDING]` placeholders:** none.
@@ -153,7 +190,9 @@ table in PENDING.md.
   ruled on and applied in the homepage dial-in pass.
 - **Awaiting founder review:** placement of the preliminary-flavor-lineup
   disclaimer (brochure, product cards, Roy's spoken answer) — review
-  before printing the brochure.
+  before printing the brochure. Also: Patrick to review and supply his
+  own wording for his bio and his family reference on the Our Story page
+  (current copy is owner-approved placeholder).
 - **Founder homework (business, not website):** research California
   cottage food / home-kitchen rules before selling publicly; decide bar
   pricing before launch (FAQ says "not set yet — announced at launch").
@@ -162,7 +201,8 @@ table in PENDING.md.
 
 ## What remains
 
-- Owner reviews the homepage dial-in pass (this task), then runs the
-  remaining **per-page dial-in passes** on Our Story, FAQ, the brochure,
-  and Roy's lines before calling the site final.
+- Owner reviews the Our Story dial-in pass (this task), then runs the
+  remaining **per-page dial-in passes** on FAQ, the brochure, and Roy's
+  lines before calling the site final.
+- Patrick's own wording for his Our Story bio and family reference.
 - Photos and the brochure disclaimer sign-off (see PENDING.md).
