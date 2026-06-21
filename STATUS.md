@@ -1,9 +1,8 @@
 # SHEH Website Project — Status Summary
 
-*Last updated: 2026-06-19 (after the Our Story dial-in pass + follow-up
-copy edits). This file briefs a brand-new session (or person) with no
-other context. Update it at the end of every completed task (CLAUDE.md
-rule 8).*
+*Last updated: 2026-06-19 (after the FAQ dial-in pass). This file briefs
+a brand-new session (or person) with no other context. Update it at the
+end of every completed task (CLAUDE.md rule 8).*
 
 ## Project basics
 
@@ -76,7 +75,16 @@ rule 8).*
   Owner may still ask to dial the watermark "lighter" or "stronger"
   (a one-number opacity change). Merged in PR #10.
 - **`faq.html` (FAQ):** twelve owner-approved questions and answers
-  (company-"we" voice allowed here).
+  (company-"we" / reader-"you" mix allowed here — the standing FAQ
+  exception). **Dial-in pass done 2026-06-19** with owner-approved copy:
+  ten of the twelve answers rewritten (the "How much will they cost?" and
+  "When do they launch?" answers were left unchanged), and one question
+  retitled "Can I suggest a flavor — or anything else?". Intro, H1,
+  eyebrow, and the closing line are unchanged. Internal links: "code" →
+  philosophy.html, "shehthrive.com" → index.html#signup, "@the1sheh" →
+  Instagram, "The full story's worth a read" → our-story.html, plus the
+  stock-inquiry mailto. Note: the shipping answer now says "Southern
+  California" pickup (was "San Diego"); other pages still say San Diego.
 - **`brochure.html`:** printable tri-fold sales brochure; the site nav on
   it is screen-only and never prints. Carries the bar lineup and the
   preliminary-flavors footnote. The contact-panel email is now a live
@@ -193,6 +201,30 @@ again."); and expanded the "Our People" body — Rebeca's line now reads
 "You build it yourself, but you don't build it by yourself." before "Built
 not given, but never built alone."
 
+## FAQ dial-in pass — done (2026-06-19)
+
+The owner's third per-page dial-in pass (FAQ), owner-approved copy used
+verbatim. The page keeps its company-"we" / reader-"you" mix (the standing
+FAQ exception). What changed:
+
+- **Ten of the twelve answers rewritten** — "What does SHEH mean?", the
+  macros answer, "What's NOT in the bars?", nuts, vegan/GF/keto, "How do I
+  get one today?", shipping, "Who makes these?", flavor suggestions, and
+  the gym/shop stock question.
+- **One question retitled:** "Can I suggest a flavor?" → "Can I suggest a
+  flavor — or anything else?"
+- **Two answers left unchanged** (as instructed): "How much will they
+  cost?" and "When do they launch?"
+- **Unchanged:** eyebrow "Straight Answers", H1 "FAQ", intro paragraph,
+  and the closing "Didn't find your answer?" line.
+- **Links:** "code" → philosophy.html; "shehthrive.com" →
+  index.html#signup; "@the1sheh" → Instagram; "The full story's worth a
+  read" → our-story.html; stock-inquiry mailto unchanged.
+- **Worth owner awareness (not an error):** the shipping answer now reads
+  "Southern California" pickup, where the rest of the site (Our Story,
+  brochure, Roy) says "San Diego." This was in the approved copy; flagging
+  only so the geography stays intentional.
+
 ## PENDING.md current state
 
 - **Open `[PENDING]` placeholders:** none.
@@ -212,8 +244,8 @@ not given, but never built alone."
 
 ## What remains
 
-- Owner reviews the Our Story dial-in pass (this task), then runs the
-  remaining **per-page dial-in passes** on FAQ, the brochure, and Roy's
-  lines before calling the site final.
+- Owner reviews the FAQ dial-in pass (this task), then runs the remaining
+  **per-page dial-in passes** on the brochure and Roy's lines
+  (`mentor-words.js`) before calling the site final.
 - Patrick's own wording for his Our Story bio and family reference.
 - Photos and the brochure disclaimer sign-off (see PENDING.md).
