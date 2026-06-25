@@ -10,24 +10,27 @@ whole bracket — including the brackets — with the real words.
 
 ## Open items — only the founders can resolve
 
-- **MERCH (NEW):** Patches and shirts are the near-term focus but none
-  exist yet — no products, designs, photos, or pricing available. Site is
-  being built ready to accept them. Founders to supply actual
-  products/designs/pricing when ready.
-- **California COTTAGE FOOD LAW:** research underway (Riverside County
-  production base; selling into San Diego/LA; shipping ladder). Directly
-  affects when/whether bars can launch and the shipping FAQ answer. Bars
-  are back-burnered pending this.
-- **MERCHANDISE LAWS:** founders need to research legal/permit
-  requirements for selling patches/shirts/physical merch (separate from
-  cottage food law).
-- **Bar pricing decision** (when bars resume).
-- **Real product photos** (image placeholders stay until then) — for bars
-  AND future merch.
+- **MERCH PRODUCT DETAILS (NEW):** Patches and apparel are the near-term
+  focus but none exist yet — no products, designs, photos, or pricing.
+  Homepage copy currently uses PLACEHOLDER product descriptions (e.g.
+  iron-on/sew-on patches; heavyweight shirts/socks/hats) that the owner
+  must confirm or correct before they're treated as fact.
+- **PRIVATE PROVISIONS CONCEPT:** the supplement system (Start Hard =
+  pre-workout, End Hard = protein, bars = fuel between) is built but
+  intentionally withheld from the live site pending product development +
+  legal/IP groundwork. Owner to consult an attorney on actually
+  protecting the concept (trademark/IP) — keeping it off the site reduces
+  exposure but is NOT legal protection.
+- **California COTTAGE FOOD LAW:** research underway (Riverside production
+  base; selling into SD/LA; shipping ladder). Affects when bars can launch
+  + shipping FAQ answer.
+- **MERCHANDISE / PHYSICAL-GOODS LAWS:** research needed for selling
+  patches/apparel (separate from cottage food law).
+- **Bar/product pricing decisions.**
+- **Real product photos** for all merch (placeholders until then).
 - **Patrick's Our Story bio + family reference:** Patrick to supply his
   own wording (current copy is owner-approved placeholder).
-- **E-commerce / cart platform decision** (for the later cart-build
-  project).
+- **E-commerce / cart platform decision** (later cart project).
 
 ## Resolved
 
