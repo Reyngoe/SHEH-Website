@@ -8,37 +8,26 @@ and the item gets checked off here.
 Open the file listed, search for the text `[PENDING`, and replace the
 whole bracket — including the brackets — with the real words.
 
-## Open items
+## Open items — only the founders can resolve
 
-*None right now.*
-
-## Queued for the final task (placeholder sweep)
-
-*Done — both mailto links were added in the task 6 sweep (see Resolved).*
-
-## Founder homework (not website tasks — just so it isn't forgotten)
-
-- [ ] Before selling publicly, look into California's cottage food /
-      home-kitchen rules (registration and label requirements for food
-      made in a home kitchen). Nothing about this appears on the site;
-      this is a business to-do, not a website one.
-- [ ] Decide bar pricing before launch. The FAQ currently says
-      "not set yet — announced at launch."
-
-## Awaiting founder review (not facts — decisions)
-
-- Disclaimer placement: a small footnote — "Flavor lineup shown is
-  preliminary and subject to change. Official names and flavors will be
-  announced before launch." — now appears under the bar list in
-  `brochure.html`, under the product cards on the website, and (in
-  shortened spoken form) in Roy's answer about the bars. Founder wants
-  to review before the brochure is printed.
-
-- Patrick's bio and his family reference on the Our Story page
-  (`our-story.html`): the current wording is owner-approved placeholder
-  copy. Patrick to review and supply his own wording for both his bio
-  ("Built between shifts" section) and the "For Patrick…" line in the
-  "Our People" section before the page is considered final.
+- **MERCH (NEW):** Patches and shirts are the near-term focus but none
+  exist yet — no products, designs, photos, or pricing available. Site is
+  being built ready to accept them. Founders to supply actual
+  products/designs/pricing when ready.
+- **California COTTAGE FOOD LAW:** research underway (Riverside County
+  production base; selling into San Diego/LA; shipping ladder). Directly
+  affects when/whether bars can launch and the shipping FAQ answer. Bars
+  are back-burnered pending this.
+- **MERCHANDISE LAWS:** founders need to research legal/permit
+  requirements for selling patches/shirts/physical merch (separate from
+  cottage food law).
+- **Bar pricing decision** (when bars resume).
+- **Real product photos** (image placeholders stay until then) — for bars
+  AND future merch.
+- **Patrick's Our Story bio + family reference:** Patrick to supply his
+  own wording (current copy is owner-approved placeholder).
+- **E-commerce / cart platform decision** (for the later cart-build
+  project).
 
 ## Resolved
 
