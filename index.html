@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHEH — Start Hard. End Hard.</title>
-  <meta name="description" content="SHEH makes protein bars for everyday men who meet hard days head-on. Start Hard. End Hard.">
+  <title>S.H.E.H — Start Hard. End Hard.</title>
+  <meta name="description" content="The S.H.E.H Company storefront — a brand-forward shop built on the Start Hard, End Hard code. Patches, gear, and more, coming soon.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,17 +12,24 @@
 
   <style>
     /* ============================================================
-       SHEH — single-file landing page
-       Palette: charcoal / slate / sand, with ember orange accent
-       Mobile-first. No images — CSS-only mountain & trail motifs.
-       Photo placeholders are clearly marked for later swap-in.
+       S.H.E.H — storefront homepage (merch pivot)
+       Feel: a warm, well-run market/tavern with goods on the shelf.
+       Atmosphere is present, but BUYING is the function: the goods
+       area ("The Stock") is the heart of the page. Brand/philosophy
+       is dialed back — the full creed lives on philosophy.html.
+       Sibling to shehthrive.org: typographic restraint + ◆ motif,
+       but warmer and more lived-in (a place of trade, not a gallery).
+       No images — atmosphere is type, colour, and the diamond motif.
        ============================================================ */
 
     :root {
-      --charcoal: #1c1e21;
-      --charcoal-deep: #141518;
-      --slate: #3b4248;
-      --slate-light: #5c656d;
+      /* warm, tavern-lit darks (a touch browner than the old charcoal) */
+      --umber-deep: #16130f;
+      --umber: #211c16;
+      --umber-soft: #2c251d;
+      --slate: #4a4339;
+      --slate-light: #6b6253;
+      /* warm daylight tones for the market floor */
       --sand: #d8c9ae;
       --sand-light: #ece4d3;
       --bone: #f5f1e8;
@@ -39,10 +46,11 @@
 
     body {
       font-family: var(--font-body);
-      background: var(--charcoal);
+      background: var(--umber);
       color: var(--bone);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;   /* never let a wide display line force a horizontal scroll */
     }
 
     h1, h2, h3 {
@@ -63,18 +71,44 @@
 
     section { padding: 4.5rem 0; }
 
-    .kicker {
-      display: inline-block;
-      font-family: var(--font-head);
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.25em;
+    /* ◆ ornament — the shared motif (small, quiet, ember) */
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
       color: var(--ember);
-      margin-bottom: 0.75rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      margin-bottom: 1.1rem;
+    }
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      width: 2.25rem;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.5;
+    }
+    .ornament span { line-height: 1; }
+    .ornament--light { color: var(--ember-dark); }
+
+    .section-title {
+      font-size: clamp(1.9rem, 6vw, 2.75rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .section-tag {
+      font-family: var(--font-head);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.95rem;
+      color: var(--ember);
+      margin-bottom: 1.5rem;
     }
 
-    /* ---------- Site nav ---------- */
+    /* ---------- Site nav (identical across every page) ---------- */
 
     .site-nav {
       position: fixed;
@@ -82,7 +116,7 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(20, 21, 24, 0.95);
+      background: rgba(22, 19, 15, 0.95);
       border-bottom: 1px solid var(--slate);
     }
 
@@ -132,7 +166,7 @@
       top: 100%;
       left: 0;
       right: 0;
-      background: var(--charcoal-deep);
+      background: var(--umber-deep);
       border-bottom: 1px solid var(--slate);
       padding: 0.5rem 0 1rem;
       text-align: center;
@@ -170,13 +204,7 @@
       .site-nav-menu a[aria-current="page"] { border-bottom-color: var(--ember); }
     }
 
-    .section-title {
-      font-size: clamp(1.9rem, 6vw, 2.75rem);
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-    }
-
-    /* ---------- Hero ---------- */
+    /* ---------- Hero (atmospheric / typographic — the front door) ---------- */
 
     .hero {
       position: relative;
@@ -186,63 +214,283 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      background: linear-gradient(180deg, var(--charcoal-deep) 0%, var(--charcoal) 55%, #2a2d31 100%);
-      padding: 5rem 0 9rem;
+      padding: 6rem 0 4rem;
+      background:
+        radial-gradient(120% 80% at 50% 0%, var(--umber-soft) 0%, var(--umber-deep) 70%);
     }
-
-    /* CSS-only mountain ridgelines layered along the bottom */
-    .ridge {
+    /* a faint lantern glow low on the page — warmth, not a spotlight */
+    .hero::after {
+      content: "";
       position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 22vh;
-      min-height: 130px;
+      left: 50%;
+      bottom: -25%;
+      width: 90vw;
+      max-width: 50rem;
+      height: 50vh;
+      transform: translateX(-50%);
+      background: radial-gradient(closest-side, rgba(199, 91, 42, 0.16), rgba(199, 91, 42, 0) 75%);
       pointer-events: none;
     }
-    .ridge--back {
-      background: var(--slate);
-      opacity: 0.45;
-      clip-path: polygon(0 70%, 12% 38%, 24% 62%, 38% 22%, 50% 55%, 63% 30%, 76% 58%, 88% 35%, 100% 60%, 100% 100%, 0 100%);
-    }
-    .ridge--mid {
-      background: var(--slate);
-      opacity: 0.75;
-      height: 17vh;
-      min-height: 100px;
-      clip-path: polygon(0 55%, 10% 75%, 22% 35%, 36% 68%, 48% 28%, 60% 60%, 74% 32%, 86% 65%, 100% 45%, 100% 100%, 0 100%);
-    }
-    .ridge--front {
-      background: var(--charcoal-deep);
-      height: 11vh;
-      min-height: 70px;
-      clip-path: polygon(0 65%, 15% 40%, 30% 70%, 45% 35%, 58% 62%, 72% 38%, 85% 58%, 100% 42%, 100% 100%, 0 100%);
+    .hero-inner { position: relative; z-index: 1; }
+
+    .hero-crest {
+      color: var(--ember);
+      font-size: 0.8rem;
+      letter-spacing: 0.5em;
+      margin-bottom: 1.75rem;
+      padding-left: 0.5em;
     }
 
     .hero-name {
-      font-size: clamp(4.5rem, 22vw, 11rem);
+      font-size: clamp(2.6rem, 13vw, 8.5rem);
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.04em;
       color: var(--bone);
+      max-width: 100%;
     }
     .hero-name span { color: var(--ember); }
 
     .hero-motto {
       font-family: var(--font-head);
       font-weight: 600;
-      font-size: clamp(1.15rem, 5vw, 1.9rem);
+      font-size: clamp(1.05rem, 4.2vw, 1.8rem);
       text-transform: uppercase;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.22em;
       color: var(--sand);
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
+      padding-left: 0.22em;
+      overflow-wrap: break-word;
+    }
+    @media (max-width: 26rem) {
+      .hero-motto { letter-spacing: 0.14em; }
     }
 
-    .hero-tag {
-      max-width: 28rem;
-      margin: 1.5rem auto 2.25rem;
+    .hero-welcome {
+      max-width: 33rem;
+      margin: 2.25rem auto 0;
       color: var(--sand-light);
-      font-size: 1.05rem;
+      font-size: clamp(1.05rem, 3.2vw, 1.3rem);
+      line-height: 1.7;
     }
+    .hero-pull {
+      max-width: 30rem;
+      margin: 1rem auto 0;
+      color: var(--slate-light);
+      font-size: 1rem;
+    }
+
+    .hero-scroll {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 2.75rem;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--bone);
+      text-decoration: none;
+      border: 1px solid var(--slate-light);
+      padding: 0.85rem 2rem;
+      transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    }
+    .hero-scroll:hover { border-color: var(--ember); color: var(--ember); background: rgba(199, 91, 42, 0.06); }
+    .hero-scroll .arrow { display: inline-block; animation: bob 1.8s ease-in-out infinite; }
+    @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
+    @media (prefers-reduced-motion: reduce) { .hero-scroll .arrow { animation: none; } }
+
+    /* ---------- The Stock (the market floor — warm daylight) ---------- */
+
+    .stock {
+      background: var(--sand-light);
+      color: var(--umber-deep);
+      text-align: center;
+    }
+    .stock .section-title { color: var(--umber-deep); }
+
+    .departments {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      text-align: left;
+    }
+
+    .dept {
+      position: relative;
+      background: var(--bone);
+      border: 1px solid var(--sand);
+      box-shadow: 0 1px 0 rgba(33, 28, 22, 0.04);
+      padding: 1.9rem 1.7rem 1.7rem;
+      display: flex;
+      flex-direction: column;
+    }
+    /* a thin ember shelf-edge along the top of each counter */
+    .dept::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--ember);
+      opacity: 0.85;
+    }
+
+    .dept-state {
+      align-self: flex-start;
+      font-family: var(--font-head);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--ember-dark);
+      border: 1px solid var(--ember);
+      padding: 0.3rem 0.7rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .dept h3 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--umber-deep);
+      letter-spacing: 0.08em;
+    }
+    .dept-status {
+      font-family: var(--font-head);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.9rem;
+      color: var(--ember-dark);
+      margin-top: 0.4rem;
+    }
+    .dept-body {
+      color: var(--slate);
+      font-size: 1rem;
+      margin-top: 0.9rem;
+    }
+    .dept-aside {
+      color: var(--slate-light);
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-top: 0.75rem;
+    }
+    .dept-cta {
+      align-self: flex-start;
+      margin-top: 1.5rem;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ember-dark);
+      text-decoration: none;
+      border-bottom: 2px solid var(--ember);
+      padding-bottom: 0.2rem;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .dept-cta:hover { color: var(--ember); border-bottom-color: var(--ember-dark); }
+
+    .stock-note {
+      margin-top: 2.25rem;
+      font-size: 0.85rem;
+      color: var(--slate-light);
+    }
+
+    /* ---------- Brand band (slim, dialed-back ethos) ---------- */
+
+    .band {
+      background: var(--umber-deep);
+      text-align: center;
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--slate);
+      border-bottom: 1px solid var(--slate);
+    }
+    .band-text {
+      max-width: 38rem;
+      margin: 0 auto;
+      font-family: var(--font-head);
+      font-weight: 500;
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      color: var(--sand);
+    }
+    .band-link { margin-top: 1.6rem; }
+    .band-link a {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--ember);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ember);
+      padding-bottom: 0.15rem;
+    }
+    .band-link a:hover { color: var(--ember-dark); border-bottom-color: var(--ember-dark); }
+
+    /* ---------- Follow Along ---------- */
+
+    .follow { background: var(--umber); text-align: center; }
+    .follow p {
+      max-width: 32rem;
+      margin: 0 auto;
+      color: var(--sand-light);
+    }
+    .follow-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem 2.25rem;
+      margin-top: 2.25rem;
+    }
+    .follow-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--sand);
+      text-decoration: none;
+      padding: 0.5rem 0.25rem;
+      transition: color 0.15s ease;
+    }
+    .follow-links a:hover { color: var(--ember); }
+    .follow-links svg { width: 1.3rem; height: 1.3rem; fill: currentColor; flex-shrink: 0; }
+    .follow-links .handle { color: var(--slate-light); font-family: var(--font-body); letter-spacing: 0; text-transform: none; font-weight: 500; }
+
+    /* ---------- Get the Word (email signup) ---------- */
+
+    .signup {
+      background: var(--umber-deep);
+      text-align: center;
+    }
+    .signup p {
+      max-width: 32rem;
+      margin: 0 auto 2rem;
+      color: var(--sand-light);
+    }
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 26rem;
+      margin: 0 auto;
+    }
+    .signup-form input[type="email"] {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: 0.95rem 1.1rem;
+      background: var(--umber);
+      border: 1px solid var(--slate);
+      color: var(--bone);
+    }
+    .signup-form input[type="email"]::placeholder { color: var(--slate-light); }
+    .signup-form input[type="email"]:focus { outline: 2px solid var(--ember); outline-offset: -1px; }
 
     .btn {
       display: inline-block;
@@ -261,212 +509,7 @@
     }
     .btn:hover { background: var(--ember-dark); transform: translateY(-2px); }
 
-    /* ---------- The Code ---------- */
-
-    .code {
-      background: var(--charcoal-deep);
-      text-align: center;
-    }
-    .code p {
-      max-width: 34rem;
-      margin: 0 auto 1.1rem;
-      font-size: clamp(1.05rem, 3vw, 1.25rem);
-      color: var(--sand-light);
-    }
-    .code p strong { color: var(--bone); font-weight: 600; }
-
-    /* quiet link out to the full creed on the Philosophy page */
-    .code .code-link { margin-top: 1.9rem; }
-    .code .code-link a {
-      font-family: var(--font-head);
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--ember);
-      text-decoration: none;
-      border-bottom: 1px solid var(--ember);
-      padding-bottom: 0.15rem;
-    }
-    .code .code-link a:hover { color: var(--ember-dark); border-bottom-color: var(--ember-dark); }
-
-    /* the signature quote: the section's closing beat — quiet, centered */
-    .code .code-quote {
-      max-width: 30rem;
-      margin: 2rem auto 0;
-      font-family: var(--font-head);
-      font-weight: 500;
-      font-size: 1.05rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      line-height: 1.9;
-      color: var(--sand);
-    }
-
-    /* trail divider: a dashed path with a peak marker, CSS only */
-    .trail {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      margin: 2.25rem auto 0;
-      max-width: 18rem;
-    }
-    .trail::before,
-    .trail::after {
-      content: "";
-      flex: 1;
-      border-top: 2px dashed var(--slate-light);
-    }
-    .trail-peak {
-      width: 16px;
-      height: 14px;
-      background: var(--ember);
-      clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    }
-
-    /* ---------- Products ---------- */
-
-    .products { background: var(--charcoal); }
-
-    .cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .card {
-      background: var(--charcoal-deep);
-      border: 1px solid var(--slate);
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Clearly marked spot for future product photography */
-    .photo-slot {
-      aspect-ratio: 4 / 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      border-bottom: 2px dashed var(--slate-light);
-      background:
-        linear-gradient(160deg, rgba(92, 101, 109, 0.18) 0%, rgba(28, 30, 33, 0) 60%),
-        var(--slate);
-      color: var(--sand);
-      font-family: var(--font-head);
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      padding: 1rem;
-    }
-
-    .card-body { padding: 1.4rem 1.4rem 1.6rem; }
-
-    .card h3 {
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--bone);
-    }
-
-    .card .flavor-note {
-      color: var(--sand-light);
-      font-size: 0.95rem;
-      margin-top: 0.5rem;
-    }
-
-    .cards-note {
-      margin-top: 1.5rem;
-      font-size: 0.78rem;
-      color: var(--slate-light);
-    }
-
-    .badge {
-      display: inline-block;
-      margin-top: 1rem;
-      font-family: var(--font-head);
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--ember);
-      border: 1px solid var(--ember);
-      padding: 0.3rem 0.7rem;
-    }
-
-    /* ---------- About ---------- */
-
-    .about { background: var(--sand-light); color: var(--charcoal); }
-    .about .kicker { color: var(--ember-dark); }
-    .about .section-title { color: var(--charcoal-deep); }
-    .about p {
-      max-width: 36rem;
-      margin-bottom: 1.1rem;
-      color: var(--slate);
-      font-size: 1.05rem;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-
-    .about .photo-slot {
-      aspect-ratio: 4 / 3;
-      border: 2px dashed var(--slate-light);
-      background: var(--sand);
-      color: var(--slate);
-    }
-
-    /* ---------- Signup ---------- */
-
-    .signup {
-      position: relative;
-      background: var(--charcoal-deep);
-      text-align: center;
-      overflow: hidden;
-      padding-bottom: 7rem;
-    }
-    .signup .ridge--back { opacity: 0.25; height: 14vh; min-height: 80px; }
-
-    .signup p {
-      max-width: 28rem;
-      margin: 0 auto 2rem;
-      color: var(--sand-light);
-    }
-
-    .signup-form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      max-width: 26rem;
-      margin: 0 auto;
-    }
-
-    .signup-form input[type="email"] {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      padding: 0.95rem 1.1rem;
-      background: var(--charcoal);
-      border: 1px solid var(--slate);
-      color: var(--bone);
-    }
-    .signup-form input[type="email"]::placeholder { color: var(--slate-light); }
-    .signup-form input[type="email"]:focus {
-      outline: 2px solid var(--ember);
-      outline-offset: -1px;
-    }
-
-    .signup-note {
-      margin-top: 1.25rem;
-      font-size: 0.85rem;
-      color: var(--slate-light);
-    }
-
+    .signup-note { margin-top: 1.25rem; font-size: 0.85rem; color: var(--slate-light); }
     .signup-confirm {
       font-family: var(--font-head);
       font-weight: 600;
@@ -475,28 +518,67 @@
     }
     .signup-confirm[hidden] { display: none; }
 
+    /* ---------- Roy nod (small pointer to the chat widget) ---------- */
+
+    .roy-nod {
+      background: var(--umber);
+      text-align: center;
+      padding: 0 0 4.5rem;
+    }
+    .roy-nod p {
+      font-family: var(--font-head);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.85rem;
+      color: var(--slate-light);
+    }
+    .roy-nod .diamond { color: var(--ember); margin-right: 0.6rem; }
+    .roy-nod button {
+      font: inherit;
+      color: var(--sand);
+      background: none;
+      border: none;
+      border-bottom: 1px solid var(--slate-light);
+      padding: 0 0 0.1rem;
+      cursor: pointer;
+      letter-spacing: inherit;
+      text-transform: inherit;
+    }
+    .roy-nod button:hover { color: var(--ember); border-bottom-color: var(--ember); }
+
     /* ---------- Footer ---------- */
 
     footer {
-      background: var(--charcoal-deep);
+      background: var(--umber-deep);
       border-top: 1px solid var(--slate);
-      padding: 2.5rem 0;
+      padding: 2.75rem 0;
       text-align: center;
     }
-
     .footer-brand {
       font-family: var(--font-head);
       font-weight: 700;
-      font-size: 1.4rem;
-      letter-spacing: 0.12em;
+      font-size: 1.5rem;
+      letter-spacing: 0.14em;
       color: var(--sand);
+    }
+    .footer-brand span { color: var(--ember); }
+    .footer-motto {
+      font-family: var(--font-head);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.78rem;
+      color: var(--slate-light);
+      margin-top: 0.4rem;
+      padding-left: 0.3em;
     }
 
     .footer-links {
-      margin: 1rem 0;
+      margin: 1.4rem 0 1.1rem;
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.75rem;
       flex-wrap: wrap;
     }
     .footer-links a {
@@ -507,19 +589,21 @@
       letter-spacing: 0.2em;
       color: var(--sand-light);
       text-decoration: none;
-      /* icon + label side by side, with a touch target big enough for thumbs */
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
       padding: 0.5rem 0.25rem;
     }
     .footer-links a:hover { color: var(--ember); }
-    .footer-links svg {
-      width: 1.35rem;
-      height: 1.35rem;
-      fill: currentColor;
-      flex-shrink: 0;
+    .footer-links svg { width: 1.35rem; height: 1.35rem; fill: currentColor; flex-shrink: 0; }
+
+    .footer-cross {
+      font-size: 0.9rem;
+      color: var(--sand-light);
+      margin-bottom: 1.1rem;
     }
+    .footer-cross a { color: var(--ember); text-decoration: none; border-bottom: 1px solid var(--ember); padding-bottom: 0.1rem; }
+    .footer-cross a:hover { color: var(--ember-dark); border-bottom-color: var(--ember-dark); }
 
     .footer-fine { font-size: 0.8rem; color: var(--slate-light); }
 
@@ -527,19 +611,43 @@
 
     @media (min-width: 44rem) {
       section { padding: 6rem 0; }
-
-      .cards { grid-template-columns: repeat(3, 1fr); }
-
-      .about-grid { grid-template-columns: 3fr 2fr; gap: 3rem; }
-
+      .departments { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
       .signup-form { flex-direction: row; }
       .signup-form input[type="email"] { flex: 1; }
     }
+
+    /* ============================================================
+       PARKED BARS MODULE — styles kept ready for deployment.
+       The bar product cards were RELOCATED out of the live page in
+       the merch pivot (not deleted). Their markup is preserved in the
+       inert <template id="parked-bars"> near the end of <body>. These
+       styles are dormant until that module is switched on as the
+       bars department. Do not delete.
+       ============================================================ */
+    .cards { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
+    .card { background: var(--umber-deep); border: 1px solid var(--slate); display: flex; flex-direction: column; }
+    .photo-slot {
+      aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center;
+      text-align: center; border-bottom: 2px dashed var(--slate-light);
+      background: linear-gradient(160deg, rgba(107, 98, 83, 0.18) 0%, rgba(33, 28, 22, 0) 60%), var(--slate);
+      color: var(--sand); font-family: var(--font-head); font-size: 0.8rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.18em; padding: 1rem;
+    }
+    .card-body { padding: 1.4rem 1.4rem 1.6rem; }
+    .card h3 { font-size: 1.35rem; font-weight: 600; color: var(--bone); }
+    .card .flavor-note { color: var(--sand-light); font-size: 0.95rem; margin-top: 0.5rem; }
+    .cards-note { margin-top: 1.5rem; font-size: 0.78rem; color: var(--slate-light); }
+    .badge {
+      display: inline-block; margin-top: 1rem; font-family: var(--font-head); font-size: 0.75rem;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--ember);
+      border: 1px solid var(--ember); padding: 0.3rem 0.7rem;
+    }
+    @media (min-width: 44rem) { .cards { grid-template-columns: repeat(3, 1fr); } }
   </style>
 </head>
 <body>
 
-  <!-- ============ SITE NAV ============ -->
+  <!-- ============ SITE NAV (identical across all pages) ============ -->
   <nav class="site-nav" aria-label="Site">
     <div class="wrap site-nav-inner">
       <a class="site-nav-brand" href="index.html">SHE<span>H</span></a>
@@ -555,98 +663,92 @@
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
+  <!-- ============ HERO — the front door ============ -->
   <header class="hero">
-    <div class="wrap">
-      <h1 class="hero-name">SHE<span>H</span></h1>
+    <div class="wrap hero-inner">
+      <p class="hero-crest" aria-hidden="true">◆</p>
+      <h1 class="hero-name">S.H.E.<span>H</span></h1>
       <p class="hero-motto">Start Hard. End Hard.</p>
-      <p class="hero-tag">Protein bars for men who meet the hard days head-on.</p>
-      <a class="btn" href="#signup">Be First in Line</a>
+      <p class="hero-welcome">This is our place. Pull the door open, come on in, take a look around.</p>
+      <p class="hero-pull">The shelves are filling. Come see what's landed.</p>
+      <a class="hero-scroll" href="#stock">Step inside <span class="arrow" aria-hidden="true">↓</span></a>
     </div>
-    <div class="ridge ridge--back" aria-hidden="true"></div>
-    <div class="ridge ridge--mid" aria-hidden="true"></div>
-    <div class="ridge ridge--front" aria-hidden="true"></div>
   </header>
 
-  <!-- ============ THE CODE ============ -->
-  <section class="code" id="code">
+  <!-- ============ THE STOCK — the goods area ============ -->
+  <section class="stock" id="stock">
     <div class="wrap">
-      <h2 class="section-title">The Code</h2>
-      <p><strong>Built not given.</strong> You came in with nothing. Everything you are, you built.</p>
-      <p><strong>Start hard.</strong> Whole effort, whole heart, from the first hour.</p>
-      <p><strong>End hard.</strong> Anybody can start. Finishing is what separates you.</p>
-      <p><strong>Hard not harsh.</strong> Be a warrior in a garden — strong enough for any fight, wise enough to need none.</p>
-      <p><strong>The Long Game.</strong> Rest. Recalibrate. But keep walking — the walk is the point.</p>
-      <p class="code-link"><a href="philosophy.html">Read the full creed</a></p>
-      <div class="trail" aria-hidden="true"><span class="trail-peak"></span></div>
-      <p class="code-quote">&ldquo;Start hard today, be harder than yesterday, for today is yesterday&rsquo;s tomorrow.&rdquo;</p>
-    </div>
-  </section>
+      <div class="ornament ornament--light" aria-hidden="true"><span>◆ ◆ ◆</span></div>
+      <h2 class="section-title">The Stock</h2>
+      <p class="section-tag">Goods, gear, and the like.</p>
 
-  <!-- ============ PRODUCTS ============ -->
-  <section class="products" id="products">
-    <div class="wrap">
-      <span class="kicker">Coming Soon</span>
-      <h2 class="section-title">Fuel for the climb</h2>
-      <p>Honest protein bars. Real ingredients, no noise. First batch is on the way.</p>
+      <!-- Departments: modular counters. Each will one day open into its
+           own collection page of individual items. For now they show a
+           coming-soon state and route interest to the list. -->
+      <div class="departments">
 
-      <div class="cards">
-        <article class="card">
-          <!-- PHOTO PLACEHOLDER: replace with product shot -->
-          <div class="photo-slot">[ Product photo<br>coming soon ]</div>
-          <div class="card-body">
-            <h3>First Light</h3>
-            <p class="flavor-note">Peanut butter &amp; dark chocolate. For the first hour.</p>
-            <span class="badge">Coming Soon</span>
-          </div>
+        <article class="dept">
+          <span class="dept-state">Coming Soon</span>
+          <h3>Patches</h3>
+          <p class="dept-status">First up, and coming soon.</p>
+          <p class="dept-body">Iron-on and sew-on patches, built tough enough to ride on whatever you put them on.</p>
+          <p class="dept-aside">* One of our original goods.</p>
+          <a class="dept-cta" href="#signup">Notify me when they land →</a>
         </article>
 
-        <article class="card">
-          <!-- PHOTO PLACEHOLDER: replace with product shot -->
-          <div class="photo-slot">[ Product photo<br>coming soon ]</div>
-          <div class="card-body">
-            <h3>The Grind</h3>
-            <p class="flavor-note">Coffee &amp; cacao. For the middle miles nobody sees.</p>
-            <span class="badge">Coming Soon</span>
-          </div>
+        <article class="dept">
+          <span class="dept-state">In the Works</span>
+          <h3>Gear</h3>
+          <p class="dept-status">In the works.</p>
+          <p class="dept-body">Heavyweight shirts, socks, hats and the like — wares that earn their keep, nothing you'll retire after three washes. Built to be worn hard, look clean, and wear comfortable.</p>
+          <a class="dept-cta" href="#signup">Notify me when they're ready →</a>
         </article>
 
-        <article class="card">
-          <!-- PHOTO PLACEHOLDER: replace with product shot -->
-          <div class="photo-slot">[ Product photo<br>coming soon ]</div>
-          <div class="card-body">
-            <h3>Last Rep</h3>
-            <p class="flavor-note">Salted caramel &amp; almond. For finishing what you started.</p>
-            <span class="badge">Coming Soon</span>
-          </div>
-        </article>
       </div>
 
-      <p class="cards-note">Flavor lineup shown is preliminary and subject to change. Official names and flavors will be announced before launch.</p>
+      <p class="stock-note">Goods shown are on the way — descriptions are early and may change before they land.</p>
     </div>
   </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="about" id="about">
-    <div class="wrap about-grid">
-      <div>
-        <span class="kicker">Who We Are</span>
-        <h2 class="section-title">Two friends, one code</h2>
-        <p>SHEH is two friends building something real. No investors, no playbook — just early mornings, kitchen-table batches, and a belief that ordinary men doing hard things right is worth backing.</p>
-        <p>We're not here to tell you how to be a man. We're here to fuel the one you already are.</p>
-        <a class="btn" href="our-story.html" style="margin-top: 0.5rem;">Read Our Story</a>
+  <!-- ============ BRAND BAND — dialed-back ethos ============ -->
+  <section class="band">
+    <div class="wrap">
+      <p class="band-text">&ldquo;We don&rsquo;t make things to be soft. Everything that leaves this place is built to be used hard and last long &mdash; because that&rsquo;s the code we live by.&rdquo;</p>
+      <p class="band-link"><a href="philosophy.html">The whole creed →</a></p>
+    </div>
+  </section>
+
+  <!-- ============ FOLLOW ALONG ============ -->
+  <section class="follow" id="follow">
+    <div class="wrap">
+      <div class="ornament" aria-hidden="true"><span>◆</span></div>
+      <h2 class="section-title">Follow Along</h2>
+      <p class="section-tag">The day-to-day, as it happens.</p>
+      <p>New goods, new drops, and the work behind them. Follow along and you&rsquo;ll see it first.</p>
+      <div class="follow-links">
+        <a href="https://www.instagram.com/the1sheh" target="_blank" rel="noopener" aria-label="SHEH on Instagram (@the1sheh)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2m0-2.2C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.92 5.92 0 0 0-2.14 1.4A5.92 5.92 0 0 0 .6 4.16C.31 4.93.11 5.8.05 7.08 0 8.35 0 8.76 0 12.02s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.72 1.47 1.4 2.14a5.92 5.92 0 0 0 2.13 1.39c.77.3 1.64.5 2.92.56 1.27.06 1.68.07 4.94.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.92 5.92 0 0 0 2.14-1.39 5.92 5.92 0 0 0 1.39-2.14c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.94c-.06-1.28-.26-2.15-.56-2.92a5.92 5.92 0 0 0-1.39-2.13A5.92 5.92 0 0 0 19.88.63c-.77-.3-1.64-.5-2.92-.56C15.69.01 15.28 0 12.02 0H12zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+          Instagram <span class="handle">@the1sheh</span>
+        </a>
+        <a href="https://x.com/the1sheh" target="_blank" rel="noopener" aria-label="SHEH on X (@the1sheh)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg>
+          X <span class="handle">@the1sheh</span>
+        </a>
+        <a href="https://www.youtube.com/@the1sheh" target="_blank" rel="noopener" aria-label="The S.H.E.H Company on YouTube (@the1sheh)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+          YouTube <span class="handle">@the1sheh</span>
+        </a>
       </div>
-      <!-- PHOTO PLACEHOLDER: replace with founders photo -->
-      <div class="photo-slot">[ Founders photo<br>coming soon ]</div>
     </div>
   </section>
 
-  <!-- ============ SIGNUP ============ -->
+  <!-- ============ GET THE WORD — email signup (id kept for inbound #signup links) ============ -->
   <section class="signup" id="signup">
     <div class="wrap">
-      <span class="kicker">Early Access</span>
-      <h2 class="section-title">Be first in line</h2>
-      <p>Drop your email. When the first batch is ready, you'll hear it from us before anyone else.</p>
+      <div class="ornament" aria-hidden="true"><span>◆</span></div>
+      <h2 class="section-title">Get the Word</h2>
+      <p class="section-tag">When goods land, the list hears first.</p>
+      <p>No spam, no noise &mdash; just word when there&rsquo;s something worth your time. New drops, first dibs, and the occasional note from the shop.</p>
 
       <form class="signup-form" id="signup-form" action="https://shehthrive.us9.list-manage.com/subscribe/post?u=bceb3026939a1e41a9db1c7bb&amp;id=c92a052225&amp;f_id=003056e1f0" method="post">
         <input type="email" name="EMAIL" placeholder="you@example.com" required aria-label="Email address">
@@ -657,21 +759,33 @@
         <button class="btn" type="submit">Count Me In</button>
       </form>
       <p class="signup-confirm" id="signup-confirm" hidden>You're in. We'll be in touch.</p>
-      <p class="signup-note">No spam. No noise. Just word when it's ready.</p>
+      <p class="signup-note">No spam. No noise. Just word when there&rsquo;s something worth your time.</p>
     </div>
-    <div class="ridge ridge--back" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ OLD MAN ROY NOD ============ -->
+  <section class="roy-nod">
+    <div class="wrap">
+      <p><span class="diamond" aria-hidden="true">◆</span>Questions? <button type="button" id="roy-nod-open">Roy&rsquo;s at the bar.</button></p>
+    </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
   <footer>
     <div class="wrap">
-      <p class="footer-brand">SHEH</p>
+      <p class="footer-brand">S.H.E.<span>H</span></p>
+      <p class="footer-motto">Start Hard. End Hard.</p>
       <nav class="footer-links">
         <a href="our-story.html">Our Story</a>
+        <a href="philosophy.html">Philosophy</a>
         <a href="faq.html">FAQ</a>
         <a href="https://www.instagram.com/the1sheh" target="_blank" rel="noopener" aria-label="SHEH on Instagram (@the1sheh)">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2m0-2.2C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.92 5.92 0 0 0-2.14 1.4A5.92 5.92 0 0 0 .6 4.16C.31 4.93.11 5.8.05 7.08 0 8.35 0 8.76 0 12.02s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.72 1.47 1.4 2.14a5.92 5.92 0 0 0 2.13 1.39c.77.3 1.64.5 2.92.56 1.27.06 1.68.07 4.94.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.92 5.92 0 0 0 2.14-1.39 5.92 5.92 0 0 0 1.39-2.14c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.94c-.06-1.28-.26-2.15-.56-2.92a5.92 5.92 0 0 0-1.39-2.13A5.92 5.92 0 0 0 19.88.63c-.77-.3-1.64-.5-2.92-.56C15.69.01 15.28 0 12.02 0H12zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
           Instagram
+        </a>
+        <a href="https://x.com/the1sheh" target="_blank" rel="noopener" aria-label="SHEH on X (@the1sheh)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg>
+          X
         </a>
         <a href="https://www.youtube.com/@the1sheh" target="_blank" rel="noopener" aria-label="The S.H.E.H Company on YouTube">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
@@ -682,10 +796,67 @@
           Email
         </a>
       </nav>
+      <p class="footer-cross">Here for the story and the rest? Find it at <a href="https://shehthrive.org" target="_blank" rel="noopener">shehthrive.org</a>.</p>
       <p class="footer-fine">&copy; 2026 The S.H.E.H Company. Start Hard. End Hard.</p>
     </div>
   </footer>
 
+  <!-- ============================================================
+       PARKED BARS MODULE — RELOCATED, NOT DELETED (merch pivot).
+       The protein bar is now one product among many and is pushed far
+       down the timeline (cottage food law). Its homepage product cards
+       and the preliminary-flavor note are preserved verbatim below in
+       an inert <template>: nothing renders, nothing is lost. When bars
+       are real, this becomes the bars department on The Stock. Bar
+       macros / ingredients / kitchen story live on faq.html
+       and brochure.html and will get the three-tier treatment in the
+       page sweep — they were not touched in this homepage task.
+       ============================================================ -->
+  <template id="parked-bars">
+    <section class="products" id="products">
+      <div class="wrap">
+        <span class="kicker">Coming Soon</span>
+        <h2 class="section-title">Fuel for the climb</h2>
+        <p>Honest protein bars. Real ingredients, no noise. First batch is on the way.</p>
+
+        <div class="cards">
+          <article class="card">
+            <!-- PHOTO PLACEHOLDER: replace with product shot -->
+            <div class="photo-slot">[ Product photo<br>coming soon ]</div>
+            <div class="card-body">
+              <h3>First Light</h3>
+              <p class="flavor-note">Peanut butter &amp; dark chocolate. For the first hour.</p>
+              <span class="badge">Coming Soon</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <!-- PHOTO PLACEHOLDER: replace with product shot -->
+            <div class="photo-slot">[ Product photo<br>coming soon ]</div>
+            <div class="card-body">
+              <h3>The Grind</h3>
+              <p class="flavor-note">Coffee &amp; cacao. For the middle miles nobody sees.</p>
+              <span class="badge">Coming Soon</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <!-- PHOTO PLACEHOLDER: replace with product shot -->
+            <div class="photo-slot">[ Product photo<br>coming soon ]</div>
+            <div class="card-body">
+              <h3>Last Rep</h3>
+              <p class="flavor-note">Salted caramel &amp; almond. For finishing what you started.</p>
+              <span class="badge">Coming Soon</span>
+            </div>
+          </article>
+        </div>
+
+        <p class="cards-note">Flavor lineup shown is preliminary and subject to change. Official names and flavors will be announced before launch.</p>
+      </div>
+    </section>
+  </template>
+
+  <!-- Email signup: Mailchimp JSONP (no page-leave); plain-submit fallback -->
   <script>
     (function () {
       var form = document.getElementById('signup-form');
@@ -748,6 +919,7 @@
     })();
   </script>
 
+  <!-- Nav toggle -->
   <script>
     (function () {
       var nav = document.querySelector('.site-nav');
@@ -761,6 +933,19 @@
 
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && nav.classList.contains('open')) toggle.click();
+      });
+    })();
+  </script>
+
+  <!-- Roy nod: the small pointer opens Old Man Roy's chat (his launcher
+       button #roy-open is injected by mentor.js). -->
+  <script>
+    (function () {
+      var nod = document.getElementById('roy-nod-open');
+      if (!nod) return;
+      nod.addEventListener('click', function () {
+        var royBtn = document.getElementById('roy-open');
+        if (royBtn) royBtn.click();
       });
     })();
   </script>
