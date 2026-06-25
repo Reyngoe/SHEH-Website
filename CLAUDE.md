@@ -31,6 +31,7 @@ There is a confidential product concept (the "Provisions" supplement system — 
 - Second person everywhere it makes sense. EXCEPTIONS: Our Story (founders speak as "we") and FAQ ("we" = company).
 - Flagship sayings: full signature quote (primary) "Start hard today, be harder than yesterday, for today is yesterday's tomorrow"; "Harder than yesterday" (short form, never used exclusively in place of the full quote); "Built not given" (no comma). Motto display: "Start Hard. End Hard." (periods, display) vs "Start Hard, End Hard" (comma, prose).
 - Metaphor hierarchy: road/walk = philosophy metaphor; climb = action metaphor. Don't mix within a line.
+- Old Man Roy widget palette: `mentor.js` (the shared Roy chat widget, on every page) styles itself from a fixed set of palette CSS variables. Those variables must stay DEFINED on every page. If a page rebuild renames or drops palette variables, alias the old names back on that page's `:root` so Roy doesn't render invisible (transparent panel/bubbles/borders). Before renaming any palette variable, grep `mentor.js` for `var(--` to get the authoritative list of what the widget depends on — don't trust a remembered list. (As of this writing that list is: --bone, --charcoal, --charcoal-deep, --ember, --ember-dark, --font-body, --font-head, --sand, --sand-light, --slate, --slate-light — but re-grep, don't assume.)
 - At the end of every completed task, update STATUS.md so it can fully brief a brand-new session.
 
 ## Navigation menu rules
