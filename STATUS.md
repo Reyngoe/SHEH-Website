@@ -1,8 +1,9 @@
 # SHEH STOREFRONT (shehthrive.com) — STATUS
 
 *Last updated: 2026-06-25 (homepage merch-pivot rebuild MERGED, + Roy palette
-regression fixed). This file briefs a brand-new session (or person) with no other
-context. Update it at the end of every completed task (CLAUDE.md standing rule).*
+regression fixed, + email signup moved to MailerLite). This file briefs a
+brand-new session (or person) with no other context. Update it at the end of
+every completed task (CLAUDE.md standing rule).*
 
 PROJECT: Static site (HTML/CSS/JS, no backend) on GitHub Pages. Repo: github.com/Reyngoe/SHEH-Website. Brand = SHEH merch (ethos-driven). Co-founders Jacob & Patrick, San Diego.
 
@@ -20,7 +21,7 @@ HOMEPAGE MERCH-PIVOT REBUILD — MERGED & COMPLETE (branch `claude/homepage-merc
 - BAR CONTENT RELOCATED, NOT DELETED: the three bar product cards (First Light / The Grind / Last Rep + flavor taglines) and the preliminary-flavor note were moved verbatim into an inert <template id="parked-bars"> at the bottom of index.html, with the product-card CSS kept dormant. Renders nothing; ready to switch on as the bars department when bars are real. (Bar macros/ingredients/kitchen story were never on the homepage — they live on faq.html/brochure.html and get the three-tier treatment in the page sweep.)
 - PRODUCT COPY = PLACEHOLDER: the Patches/Gear descriptions are owner-confirmable placeholders, not finalized facts (logged in PENDING.md).
 - Provisions/supplement department: NOT on the page (private — parked per CLAUDE.md). No public render or link.
-- Email signup wired to the existing Mailchimp JSONP mechanism (unchanged). Department CTAs currently route to the #signup list to capture interest until per-department collection pages exist.
+- Email signup is wired to MAILERLITE (merged to main). The "Get the Word" form (id="joinForm", form id) posts to the MailerLite subscribe endpoint via a hidden iframe so the visitor stays on the page; email field is name="fields[email]", plus MailerLite hidden fields (ml-submit, anticsrf) and a honeypot (name="url"). On submit the form hides and a #joinSuccess message shows — OPTIMISTIC (shown on submit, not on confirmed success from MailerLite). The old Mailchimp JSONP form + its script + the .signup-confirm element/CSS were removed in the swap. Design unchanged (kept .signup-form / .btn). NOTE: the section id="signup" is unchanged, so inbound links (FAQ/Philosophy/Our Story → index.html#signup) still resolve. TODO (owner): do one real submit on the live site to confirm addresses land in the MailerLite audience. Department CTAs still route to the #signup section to capture interest until per-department collection pages exist.
 - Nav left UNCHANGED (Home, Our Story, Philosophy, FAQ — identical across pages). FLAGGED FOR OWNER: now that goods are central, the nav may want a "Shop"/"The Stock" entry — not added this task (nav rules require owner sign-off first).
 
 ROY PALETTE REGRESSION — found and fixed post-merge (homepage only):
