@@ -517,13 +517,6 @@
     .btn:hover { background: var(--ember-dark); transform: translateY(-2px); }
 
     .signup-note { margin-top: 1.25rem; font-size: 0.85rem; color: var(--slate-light); }
-    .signup-confirm {
-      font-family: var(--font-head);
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: var(--sand);
-    }
-    .signup-confirm[hidden] { display: none; }
 
     /* ---------- Roy nod (small pointer to the chat widget) ---------- */
 
@@ -757,16 +750,18 @@
       <p class="section-tag">When goods land, the list hears first.</p>
       <p>No spam, no noise &mdash; just word when there&rsquo;s something worth your time. New drops, first dibs, and the occasional note from the shop.</p>
 
-      <form class="signup-form" id="signup-form" action="https://shehthrive.us9.list-manage.com/subscribe/post?u=bceb3026939a1e41a9db1c7bb&amp;id=c92a052225&amp;f_id=003056e1f0" method="post">
-        <input type="email" name="EMAIL" placeholder="you@example.com" required aria-label="Email address">
-        <!-- Mailchimp bot protection — leave empty -->
-        <div aria-hidden="true" style="position: absolute; left: -5000px;">
-          <input type="text" name="b_bceb3026939a1e41a9db1c7bb_c92a052225" tabindex="-1" value="">
-        </div>
+      <form id="joinForm" class="signup-form" action="https://assets.mailerlite.com/jsonp/2478250/forms/191757507041953358/subscribe" method="post" target="sheh_ml_iframe">
+        <input type="email" name="fields[email]" placeholder="you@example.com" required autocomplete="email" aria-label="Email address">
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+        <!-- honeypot: invisible to people, catches bots -->
+        <input type="text" name="url" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
         <button class="btn" type="submit">Count Me In</button>
       </form>
-      <p class="signup-confirm" id="signup-confirm" hidden>You're in. We'll be in touch.</p>
+      <p class="signup-note" id="joinSuccess" hidden>You&rsquo;re in. We&rsquo;ll only send word when there&rsquo;s something worth your time.</p>
       <p class="signup-note">No spam. No noise. Just word when there&rsquo;s something worth your time.</p>
+      <!-- hidden target so submitting doesn't navigate the visitor away -->
+      <iframe name="sheh_ml_iframe" title="hidden" aria-hidden="true" tabindex="-1" style="position:absolute;width:0;height:0;border:0;left:-9999px;"></iframe>
     </div>
   </section>
 
@@ -863,67 +858,19 @@
     </section>
   </template>
 
-  <!-- Email signup: Mailchimp JSONP (no page-leave); plain-submit fallback -->
+  <!-- Email signup: MailerLite (posts to the hidden iframe so the visitor stays put) -->
   <script>
-    (function () {
-      var form = document.getElementById('signup-form');
-      var confirmMsg = document.getElementById('signup-confirm');
-      var button = form.querySelector('button[type="submit"]');
-      var inFlight = false;
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (inFlight) return;
-        inFlight = true;
-        button.disabled = true;
-
-        // Mailchimp's JSONP endpoint allows cross-origin signup without
-        // leaving the page (the plain POST endpoint blocks CORS).
-        var url = form.action.replace('/subscribe/post?', '/subscribe/post-json?');
-        var params = new URLSearchParams(new FormData(form));
-        var callbackName = 'mcCallback' + Date.now();
-        params.set('c', callbackName);
-
-        var script = document.createElement('script');
-
-        function finish() {
-          delete window[callbackName];
-          script.remove();
-          inFlight = false;
-        }
-
-        window[callbackName] = function (data) {
-          finish();
-          // Duplicate signups can come back as result "success" or as an
-          // error whose message mentions the address is already subscribed.
-          var msg = String((data && data.msg) || '');
-          var alreadySubscribed = /already subscribed|already a list member|already on/i.test(msg);
-          if (alreadySubscribed) {
-            form.hidden = true;
-            confirmMsg.textContent = "You're already on the list. We'll be in touch.";
-            confirmMsg.hidden = false;
-          } else if (data && data.result === 'success') {
-            form.hidden = true;
-            confirmMsg.textContent = "You're in. We'll be in touch.";
-            confirmMsg.hidden = false;
-          } else {
-            button.disabled = false;
-            confirmMsg.textContent = 'Something went wrong. Check your email and try again.';
-            confirmMsg.hidden = false;
-          }
-        };
-
-        script.onerror = function () {
-          finish();
-          button.disabled = false;
-          // Network blocked the JSONP request — fall back to a plain submit.
-          form.submit();
-        };
-
-        script.src = url + '&' + params.toString();
-        document.body.appendChild(script);
-      });
-    })();
+  (function(){
+    var form=document.getElementById('joinForm'),
+        hp=form&&form.querySelector('input[name="url"]'),
+        success=document.getElementById('joinSuccess');
+    if(!form) return;
+    form.addEventListener('submit', function(e){
+      if(hp&&hp.value){ e.preventDefault(); return; }
+      form.style.display='none';
+      if(success) success.hidden=false;
+    });
+  })();
   </script>
 
   <!-- Nav toggle -->
