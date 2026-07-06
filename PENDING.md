@@ -32,25 +32,6 @@ whole bracket — including the brackets — with the real words.
   own wording (current copy is owner-approved placeholder).
 - **E-commerce / cart platform decision** (later cart project).
 
-## Audit proposals — awaiting owner decision (from the 2026-06-25 site audit)
-
-- **Footer alignment (our-story + philosophy):** these two pages still
-  carry the older, simpler footer (brand text "SHEH", no motto, no X /
-  Email / shehthrive.org cross-link, and a footer nav that still lists
-  "Home"). Proposal is to align them to the index/faq reference footer.
-  It's visitor-visible, so it's held for approval — say the word and it's
-  a mechanical change mirroring what faq.html already has.
-- **`<main>` landmark:** no page wraps its primary content in a `<main>`
-  landmark (accessibility). Proposal is to add one per page. Held because
-  choosing the wrap boundary (include the hero or not) is a small markup
-  decision.
-- **Brochure — Roy + meta description:** the print brochure (brochure.html)
-  does not load Old Man Roy and has no meta description. Recommended: leave
-  the print artifact as-is (a chat widget on a printable tri-fold makes no
-  sense, same reason its nav is screen-only). Confirm, or say if you want
-  Roy and/or a meta description added. (If Roy is ever added, brochure must
-  first define the 11 palette variables the widget reads.)
-
 ## Resolved
 
 | # | What was needed | Answer used |
@@ -66,3 +47,6 @@ whole bracket — including the brackets — with the real words.
 | 11 | Roy's "Earned, not given." (from the task 6 tone report) | Founder ruling: aligned to the flagship form — Roy now says "Built not given." (no comma) in `mentor-words.js` |
 | 12 | Shipping vs local-only (merch) — FAQ answer | Founder ruling: **person to person first** (hand to hand, word of mouth), shipping added as we grow into it. FAQ "Will you ship, or is it local only?" now reflects this. (Bar shipping stays tied to the California cottage food law — still open, separate item.) |
 | 13 | Design-approval policy | Founder ruling confirmed: **every design is approved by both founders (Jacob & Patrick)** — family/close friends may add inspiration, but nothing wears the mark unless both sign off. FAQ "Are the designs your own?" reflects this. |
+| 14 | Audit proposal: footer alignment (our-story + philosophy) | Owner ruling: **approved**. Both footers aligned to the index/faq reference — all four content-page footers now identical (S.H.E.H mark + motto, page links, IG/X/YouTube/Email, shehthrive.org cross-link). |
+| 15 | Audit proposal: `<main>` landmark | Owner ruling: **approved**. Added on all four content pages (markup only, zero visual change); brochure excluded per ruling 16. |
+| 16 | Audit proposal: brochure Roy + meta description | Owner ruling: **leave brochure.html as-is** — no Roy, no meta description on the print artifact. Folds into the future brochure overhaul. (If Roy is ever added there, brochure must first define the 11 palette variables the widget reads.) |

@@ -42,14 +42,16 @@ SITE AUDIT / CONFORMANCE PASS — RAN 2026-06-25 (safe fixes committed straight 
 - Full read-only audit of all five pages (nav/footer parity, palette/token conformance, link integrity, single-source consistency, scripts/XSS, performance, accessibility, docs-vs-reality drift).
 - HEALTHY: nav is identical across all five pages (Home, Shop, Our Story, Philosophy, FAQ) with correct aria-current and a wired mobile toggle everywhere; brochure nav correctly print-hidden. All four Roy-bearing pages define the full 11-var palette Roy needs. All internal links/anchors resolve (#stock, #signup included). No XSS (Roy uses textContent). No <img> tags (no alt/lazy gaps). Motto punctuation and flagship sayings all conform. Fonts/preconnects consistent.
 - FIXED this pass (safe/non-visual only): added aria-label="Footer" to the footer <nav> on the four pages that have one (two nav landmarks were otherwise both announced as "navigation"); corrected CLAUDE.md's stale documented nav order (it omitted the owner-approved "Shop" and said "preserve it" — a real hazard); reconciled this STATUS + PENDING with reality.
-- PROPOSED (gated — owner decision; NOT applied): (1) align our-story.html + philosophy.html footers to the index/faq reference (visitor-visible; also the queued "footer alignment" task); (2) add a <main> landmark to all pages (a11y); (3) brochure.html has no meta description and no Roy — decide if that's intended (recommend leaving the print artifact as-is); if Roy is ever added to brochure it must first define the 11 palette vars (it uses a separate --ink/--gray/--light token set).
+- PROPOSALS RULED ON BY OWNER (2026-06-25) and applied same day:
+  (1) APPROVED & DONE — our-story.html + philosophy.html footers aligned to the index/faq reference (S.H.E.H mark + motto, Our Story/Philosophy/FAQ, IG/X/YouTube/Email icons, shehthrive.org cross-link). ALL FOUR content-page footers are now byte-identical (verified by diff of normalized footer blocks).
+  (2) APPROVED & DONE — <main> landmark added on all four content pages (opens after the site nav, closes before the footer; markup only, zero visual change; brochure excluded per ruling 3).
+  (3) CONFIRMED AS-IS — brochure.html intentionally has no Roy and no meta description; folds into the future brochure overhaul. If Roy is ever added there, it must first define the 11 palette vars (brochure uses a separate --ink/--gray/--light token set).
 - SKIPPED (by design): per-page inline CSS duplication (no build step); brochure's divergent token names (standalone print doc, folds into the brochure overhaul).
 
 REMAINING / NOT STARTED:
-- OUR STORY MERCH-PIVOT REWRITE — this is the NEXT OWNER-LED task. The back half of our-story.html is still bar-era origin copy; it is deliberately excluded from mechanical passes and gets an owner-workshopped rewrite. No line of it was touched in the audit.
+- OUR STORY MERCH-PIVOT REWRITE — this is the NEXT OWNER-LED task. The back half of our-story.html is still bar-era origin copy; it is deliberately excluded from mechanical passes and gets an owner-workshopped rewrite. No line of it was touched in the audit or the conformance fixes (footer/landmark only).
 - Owner to confirm/correct the placeholder Patches & Gear product copy.
-- Footer alignment on our-story + philosophy (PROPOSED above; only index + faq match so far).
-- Brochure overhaul still open (bar-framed — revisit post-pivot). Philosophy/Roy mostly stay as brand tier.
+- Brochure overhaul still open (bar-framed — revisit post-pivot; owner confirmed brochure stays as-is until then). Philosophy/Roy mostly stay as brand tier.
 - Old Man Roy voice dial-in pass.
 - SEPARATE LATER PROJECT: shopping cart / e-commerce (platform TBD).
 - Department collection pages (each category clicks into a fillable collection of items) — part of later product/cart build.
