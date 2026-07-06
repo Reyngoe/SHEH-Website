@@ -32,6 +32,25 @@ whole bracket — including the brackets — with the real words.
   own wording (current copy is owner-approved placeholder).
 - **E-commerce / cart platform decision** (later cart project).
 
+## Audit proposals — awaiting owner decision (from the 2026-06-25 site audit)
+
+- **Footer alignment (our-story + philosophy):** these two pages still
+  carry the older, simpler footer (brand text "SHEH", no motto, no X /
+  Email / shehthrive.org cross-link, and a footer nav that still lists
+  "Home"). Proposal is to align them to the index/faq reference footer.
+  It's visitor-visible, so it's held for approval — say the word and it's
+  a mechanical change mirroring what faq.html already has.
+- **`<main>` landmark:** no page wraps its primary content in a `<main>`
+  landmark (accessibility). Proposal is to add one per page. Held because
+  choosing the wrap boundary (include the hero or not) is a small markup
+  decision.
+- **Brochure — Roy + meta description:** the print brochure (brochure.html)
+  does not load Old Man Roy and has no meta description. Recommended: leave
+  the print artifact as-is (a chat widget on a printable tri-fold makes no
+  sense, same reason its nav is screen-only). Confirm, or say if you want
+  Roy and/or a meta description added. (If Roy is ever added, brochure must
+  first define the 11 palette variables the widget reads.)
+
 ## Resolved
 
 | # | What was needed | Answer used |

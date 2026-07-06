@@ -85,8 +85,9 @@ There is a confidential product concept (the "Provisions" supplement system — 
 - The responsive navigation menu (`.site-nav`, with hamburger toggle on
   mobile) exists on every page: `index.html`, `our-story.html`,
   `philosophy.html`, `faq.html`, and `brochure.html` (screen-only there —
-  it never prints). Menu order: Home, Our Story, Philosophy, FAQ.
-  Preserve it in all future work.
+  it never prints). Menu order: Home, Shop, Our Story, Philosophy, FAQ
+  ("Shop" → index.html#stock, owner-approved; a section link, so it never
+  takes aria-current). Preserve it in all future work.
 - The owner is a non-technical founder: explain changes in plain
   language, never invent product/company facts (use `[PENDING: …]` and
   log them in `PENDING.md`), and follow the brand voice guide in the
