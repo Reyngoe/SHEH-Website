@@ -297,21 +297,32 @@
     footer {
       background: var(--charcoal-deep);
       border-top: 1px solid var(--slate);
-      padding: 2.5rem 0;
+      padding: 2.75rem 0;
       text-align: center;
     }
     .footer-brand {
       font-family: var(--font-head);
       font-weight: 700;
-      font-size: 1.4rem;
-      letter-spacing: 0.12em;
+      font-size: 1.5rem;
+      letter-spacing: 0.14em;
       color: var(--sand);
     }
+    .footer-brand span { color: var(--ember); }
+    .footer-motto {
+      font-family: var(--font-head);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.78rem;
+      color: var(--slate-light);
+      margin-top: 0.4rem;
+      padding-left: 0.3em;
+    }
     .footer-links {
-      margin: 1rem 0;
+      margin: 1.4rem 0 1.1rem;
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.75rem;
       flex-wrap: wrap;
     }
     .footer-links a {
@@ -322,9 +333,20 @@
       letter-spacing: 0.2em;
       color: var(--sand-light);
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
       padding: 0.5rem 0.25rem;
     }
     .footer-links a:hover { color: var(--ember); }
+    .footer-links svg { width: 1.35rem; height: 1.35rem; fill: currentColor; flex-shrink: 0; }
+    .footer-cross {
+      font-size: 0.9rem;
+      color: var(--sand-light);
+      margin-bottom: 1.1rem;
+    }
+    .footer-cross a { color: var(--ember); text-decoration: none; border-bottom: 1px solid var(--ember); padding-bottom: 0.1rem; }
+    .footer-cross a:hover { color: var(--ember-dark); border-bottom-color: var(--ember-dark); }
     .footer-fine { font-size: 0.8rem; color: var(--slate-light); }
   </style>
 </head>
@@ -346,6 +368,8 @@
       </ul>
     </div>
   </nav>
+
+  <main>
 
   <!-- ============ HERO ============ -->
   <header class="phil-hero">
@@ -420,17 +444,35 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ============ FOOTER ============ -->
   <footer>
     <div class="wrap">
-      <p class="footer-brand">SHEH</p>
+      <p class="footer-brand">S.H.E.<span>H</span></p>
+      <p class="footer-motto">Start Hard. End Hard.</p>
       <nav class="footer-links" aria-label="Footer">
-        <a href="index.html">Home</a>
         <a href="our-story.html">Our Story</a>
+        <a href="philosophy.html">Philosophy</a>
         <a href="faq.html">FAQ</a>
-        <a href="https://www.instagram.com/the1sheh" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.youtube.com/@the1sheh" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/the1sheh" target="_blank" rel="noopener" aria-label="SHEH on Instagram (@the1sheh)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2m0-2.2C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.92 5.92 0 0 0-2.14 1.4A5.92 5.92 0 0 0 .6 4.16C.31 4.93.11 5.8.05 7.08 0 8.35 0 8.76 0 12.02s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.72 1.47 1.4 2.14a5.92 5.92 0 0 0 2.13 1.39c.77.3 1.64.5 2.92.56 1.27.06 1.68.07 4.94.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.92 5.92 0 0 0 2.14-1.39 5.92 5.92 0 0 0 1.39-2.14c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.94c-.06-1.28-.26-2.15-.56-2.92a5.92 5.92 0 0 0-1.39-2.13A5.92 5.92 0 0 0 19.88.63c-.77-.3-1.64-.5-2.92-.56C15.69.01 15.28 0 12.02 0H12zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+          Instagram
+        </a>
+        <a href="https://x.com/the1sheh" target="_blank" rel="noopener" aria-label="SHEH on X (@the1sheh)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg>
+          X
+        </a>
+        <a href="https://www.youtube.com/@the1sheh" target="_blank" rel="noopener" aria-label="The S.H.E.H Company on YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+          YouTube
+        </a>
+        <a href="mailto:the1sheh@gmail.com" aria-label="Email SHEH (the1sheh@gmail.com)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.51l-8 5.33L4 6.51V6h16zM4 18V8.93l7.45 4.97a1 1 0 0 0 1.1 0L20 8.93V18H4z"/></svg>
+          Email
+        </a>
       </nav>
+      <p class="footer-cross">Here for the story and the rest? Find it at <a href="https://shehthrive.org" target="_blank" rel="noopener">shehthrive.org</a>.</p>
       <p class="footer-fine">&copy; 2026 The S.H.E.H Company. Start Hard. End Hard.</p>
     </div>
   </footer>
