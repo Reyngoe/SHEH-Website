@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The S.H.E.H Company’s printable tri-fold — the goods, straight answers, and how to get the word first.">
   <title>S.H.E.H Tri-Fold Brochure — print me</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,15 +16,15 @@
        Fold style: classic C-fold (letter fold).
 
        Page 1 = OUTSIDE of the folded brochure:
-         [ inside flap: about/contact | back cover: QR codes | FRONT COVER ]
+         [ inside flap: Get the Word | back cover: QR codes | FRONT COVER ]
        Page 2 = INSIDE spread:
-         [ the bars | our story | FAQ ]
+         [ The Goods | The Stock | Straight Answers ]
 
        Design notes:
        - Black text on white only. No background colors or images,
          because home printers skip backgrounds by default.
-       - All graphics are inline SVG (they always print).
-       - Ember orange appears only as small text accents; it turns
+       - All graphics are inline SVG or plain glyphs (they always print).
+       - Ember orange appears only as small accents; it turns
          dark gray in black-and-white and still reads fine.
        ============================================================ */
 
@@ -145,7 +146,6 @@
     .no-print h1 { font-family: var(--font-head); font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.6rem; }
     .no-print ol { padding-left: 1.4rem; }
     .no-print li { margin-bottom: 0.35rem; }
-    .no-print .warn { color: var(--ember); font-weight: 600; }
     @media print { .no-print { display: none; } }
 
     /* ---------- sheets & panels ---------- */
@@ -183,14 +183,12 @@
     .fold-tick.b2 { left: 66.6667%; bottom: 0; }
 
     /* ---------- shared type ---------- */
+    /* small diamond accent above each panel heading — a glyph, not copy */
     .kicker {
-      font-family: var(--font-head);
-      font-weight: 600;
-      font-size: 8.5pt;
-      text-transform: uppercase;
-      letter-spacing: 0.28em;
+      font-size: 9pt;
+      line-height: 1;
       color: var(--ember);
-      margin-bottom: 0.08in;
+      margin-bottom: 0.1in;
     }
     h2 {
       font-family: var(--font-head);
@@ -203,19 +201,6 @@
     }
     .panel p { font-size: 9.5pt; line-height: 1.55; color: var(--ink); margin-bottom: 0.1in; }
     .panel p.muted { color: var(--gray); }
-
-    .pending {
-      font-weight: 600;
-      border-bottom: 2px dotted var(--ink);
-    }
-
-    .footnote {
-      font-size: 6.5pt !important;
-      line-height: 1.45 !important;
-      color: var(--gray);
-      margin-top: auto;
-      padding-top: 0.1in;
-    }
 
     .rule {
       border: none;
@@ -234,10 +219,35 @@
       flex: 1;
       border-top: 1.5px dashed var(--gray);
     }
+    .trail .mark { color: var(--ember); font-size: 10pt; line-height: 1; }
+
+    .standard-line {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 11pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+    }
+
+    /* like .standard-line but no uppercase — keeps the URL and @handle as written */
+    .join-line {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 11.5pt;
+      letter-spacing: 0.04em;
+      line-height: 1.45;
+    }
 
     /* ============ FRONT COVER ============ */
     .cover { text-align: center; justify-content: space-between; align-items: center; }
-    .cover-top { width: 100%; padding-top: 0.55in; }
+    .cover-top { width: 100%; padding-top: 0.85in; }
+    .cover-mark {
+      color: var(--ember);
+      font-size: 20pt;
+      line-height: 1;
+      margin-bottom: 0.28in;
+    }
     .cover-name {
       font-family: var(--font-head);
       font-weight: 700;
@@ -253,6 +263,7 @@
       text-transform: uppercase;
       letter-spacing: 0.32em;
       margin-top: 0.16in;
+      white-space: nowrap; /* one line; centered overflow stays inside the panel padding */
     }
     .cover-bottom { width: 100%; }
     .cover-bottom .company {
@@ -261,22 +272,11 @@
       font-size: 9.5pt;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      margin-top: 0.12in;
     }
-    .cover-bottom .site { font-size: 8.5pt; color: var(--gray); letter-spacing: 0.08em; margin-top: 0.04in; }
 
     /* ============ BACK COVER (QR panel) ============ */
     .back { text-align: center; justify-content: center; }
-    .quote {
-      font-family: var(--font-head);
-      font-weight: 600;
-      font-size: 12pt;
-      line-height: 1.45;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin: 0.12in 0 0.28in;
-    }
-    .qr-row { display: flex; justify-content: center; gap: 0.32in; }
+    .qr-row { display: flex; justify-content: center; gap: 0.32in; margin-top: 0.1in; }
     .qr { width: 1.28in; }
     .qr svg { width: 1.28in; height: 1.28in; display: block; margin: 0 auto; }
     .qr .qr-label {
@@ -286,52 +286,50 @@
       letter-spacing: 0.06em;
       margin-top: 0.08in;
     }
-    .qr .qr-sub { font-size: 7.5pt; color: var(--gray); line-height: 1.4; margin-top: 0.02in; }
-    .back .fine { font-size: 7.5pt; color: var(--gray); margin-top: 0.32in; }
-
-    /* ============ FLAP (about / contact) ============ */
-    .contact-list { list-style: none; margin-top: 0.08in; }
-    .contact-list li {
-      font-size: 9.5pt;
-      line-height: 1.5;
-      padding: 0.07in 0;
-      border-bottom: 1px solid #d8d4cb;
+    .back .email-line {
+      font-size: 9pt;
+      letter-spacing: 0.04em;
+      margin-top: 0.3in;
     }
-    .contact-list li:last-child { border-bottom: none; }
-    /* the email is a live link on screen but prints as plain text */
-    .contact-list a { color: inherit; text-decoration: none; }
-    .contact-list .lbl {
-      font-family: var(--font-head);
-      font-weight: 600;
-      font-size: 8pt;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--gray);
-      display: block;
-    }
-
-    /* ============ BARS panel ============ */
-    .bar-list { list-style: none; margin: 0.06in 0 0.12in; }
-    .bar-list li {
-      padding: 0.1in 0;
-      border-bottom: 1px solid #d8d4cb;
-      font-size: 10pt;
-    }
-    .bar-list li:last-child { border-bottom: none; }
-
-    /* ============ FAQ panel ============ */
-    .faq-q {
+    .back .email-line a { color: inherit; text-decoration: none; }
+    .back .org-line { font-size: 7.5pt; color: var(--gray); margin-top: 0.22in; }
+    .back .close-motto {
       font-family: var(--font-head);
       font-weight: 600;
       font-size: 10.5pt;
       text-transform: uppercase;
+      letter-spacing: 0.28em;
+      margin-top: 0.3in;
+    }
+
+    /* ============ THE STOCK panel ============ */
+    .stock-list { list-style: none; margin: 0.06in 0 0.16in; }
+    .stock-list li {
+      padding: 0.14in 0;
+      border-bottom: 1px solid #d8d4cb;
+    }
+    .stock-list li:last-child { border-bottom: none; }
+    .stock-name {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 11pt;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+    }
+    .stock-desc { font-size: 9.5pt; line-height: 1.5; color: var(--ink); display: block; margin-top: 0.02in; }
+
+    /* ============ STRAIGHT ANSWERS panel ============ */
+    .faq-q {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 9.5pt;
+      text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-top: 0.14in;
+      margin-top: 0.12in;
     }
     .faq-q:first-of-type { margin-top: 0; }
-    .faq-a { font-size: 9pt; line-height: 1.5; color: var(--ink); margin-top: 0.03in; }
-
-    .peak-svg { display: block; margin: 0 auto; }
+    .faq-a { font-size: 8.5pt; line-height: 1.5; color: var(--ink); margin-top: 0.03in; }
   </style>
 </head>
 <body>
@@ -356,118 +354,120 @@
   <!-- ============ SCREEN-ONLY INSTRUCTIONS (won't print) ============ -->
   <div class="no-print">
     <h1>How to print &amp; fold this brochure</h1>
-    <p class="warn">Note: the bar lineup shown is preliminary — a small disclaimer appears under the bar list. Get the founder's OK on the disclaimer placement before printing copies.</p>
     <ol>
       <li><strong>Print:</strong> File &rarr; Print. Paper: Letter. Orientation: Landscape. Two-sided: ON, <strong>"flip on short edge."</strong> Scale: 100% / "Actual size." Margins: None (or Minimum).</li>
       <li><strong>No duplex printer?</strong> Print page 1 alone, put the sheet back in the tray printed-side down with the same top edge leading, then print page 2. Test with one sheet first.</li>
-      <li><strong>Fold (classic C-fold / letter fold):</strong> Lay the sheet with the INSIDE spread facing up — that's the side with The Bars / Our Story / Straight Answers. Fold the <strong>right panel (Straight Answers) in</strong> over the middle, then fold the <strong>left panel (The Bars) over the top</strong>. The S.H.E.H cover ends up on the front. Faint gray tick marks at the page edges show where the folds go.</li>
+      <li><strong>Fold (classic C-fold / letter fold):</strong> Lay the sheet with the INSIDE spread facing up — that's the side with The Goods / The Stock / Straight Answers. Fold the <strong>right panel (Straight Answers) in</strong> over the middle, then fold the <strong>left panel (The Goods) over the top</strong>. The S.H.E.H cover ends up on the front. Faint gray tick marks at the page edges show where the folds go.</li>
     </ol>
   </div>
 
   <!-- ============ PAGE 1 — OUTSIDE ============ -->
-  <!-- Panel order when flat: inside flap | back cover | front cover -->
+  <!-- Panel order when flat: inside flap (Get the Word) | back cover | front cover -->
   <div class="sheet">
     <div class="fold-tick t1"></div><div class="fold-tick t2"></div>
     <div class="fold-tick b1"></div><div class="fold-tick b2"></div>
 
-    <!-- PANEL 5: ABOUT / CONTACT (inside flap) -->
+    <!-- PANEL 5: GET THE WORD (inside flap) -->
     <div class="panel">
-      <span class="kicker">Who We Are</span>
-      <h2>The S.H.E.H Company</h2>
-      <p>An independent company built by two friends with full-time jobs and a simple code: do the hard thing, keep your word, never quit.</p>
-      <p class="muted">No investors. No shortcuts. Small batches, built before work and after bedtime.</p>
+      <span class="kicker" aria-hidden="true">&#9670;</span>
+      <h2>Get the Word</h2>
+      <p>When goods land, the list hears first — first word on drops, prices, and everything new.</p>
       <hr class="rule">
-      <ul class="contact-list">
-        <li><span class="lbl">Website</span> shehthrive.com</li>
-        <li><span class="lbl">Instagram</span> @the1sheh</li>
-        <li><span class="lbl">YouTube</span> The S.H.E.H Company</li>
-        <li><span class="lbl">Email</span> <a href="mailto:the1sheh@gmail.com">the1sheh@gmail.com</a></li>
-      </ul>
+      <p class="join-line">Join at shehthrive.com<br>or DM @the1sheh.</p>
+      <hr class="rule">
+      <p>And know this: you’ll only ever buy through us or this site.</p>
     </div>
 
     <!-- PANEL 6: BACK COVER — QR codes -->
     <div class="panel back">
       <div>
-        <span class="kicker">Join the Climb</span>
-        <p class="quote">&ldquo;Start hard today, be harder than yesterday, for today is yesterday&rsquo;s tomorrow.&rdquo;</p>
         <div class="qr-row">
           <div class="qr">
             <!-- QR: https://shehthrive.com -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h25v25H0z"/><path stroke="#000000" d="M0 0.5h7m1 0h2m2 0h5m1 0h7M0 1.5h1m5 0h1m2 0h5m4 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m3 0h1m3 0h1m3 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h2m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h3m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h1m2 0h1m4 0h1m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h2m1 0h1m3 0h2M0 8.5h1m3 0h1m1 0h3m1 0h3m2 0h1m1 0h5m2 0h1M1 9.5h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h4m3 0h2m1 0h1M0 10.5h1m1 0h7m1 0h2m1 0h1m1 0h8M2 11.5h1m1 0h2m1 0h5m2 0h1m1 0h2m4 0h2M1 12.5h3m1 0h5m1 0h1m4 0h3m2 0h4M0 13.5h2m5 0h1m1 0h2m1 0h1m1 0h3m3 0h1m2 0h1M3 14.5h2m1 0h3m2 0h6m2 0h4M3 15.5h1m3 0h3m1 0h1m2 0h3m2 0h2m1 0h2M0 16.5h11m1 0h1m2 0h8M8 17.5h3m3 0h1m1 0h1m3 0h1M0 18.5h7m1 0h1m5 0h1m1 0h1m1 0h1m1 0h1M0 19.5h1m5 0h1m2 0h1m2 0h1m1 0h1m1 0h1m3 0h5M0 20.5h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h2m1 0h9M0 21.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m2 0h3m2 0h3M0 22.5h1m1 0h3m1 0h1m2 0h6m1 0h3m2 0h1m1 0h1M0 23.5h1m5 0h1m4 0h1m1 0h1m3 0h7M0 24.5h7m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m3 0h3"/></svg>
             <div class="qr-label">shehthrive.com</div>
-            <div class="qr-sub">Be first in line for the bars</div>
           </div>
           <div class="qr">
             <!-- QR: https://www.instagram.com/the1sheh -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h29v29H0z"/><path stroke="#000000" d="M0 0.5h7m1 0h8m2 0h3m1 0h7M0 1.5h1m5 0h1m1 0h1m1 0h1m2 0h1m2 0h1m3 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m3 0h3m3 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h1m1 0h2m2 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m7 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m5 0h2m1 0h6m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m1 0h1m1 0h1m2 0h4M0 8.5h1m1 0h2m1 0h3m1 0h1m1 0h1m1 0h1m1 0h4m3 0h1m2 0h1m1 0h2M0 9.5h1m1 0h1m1 0h1m2 0h2m4 0h3m1 0h8m3 0h1M0 10.5h1m1 0h5m3 0h2m1 0h1m3 0h2m3 0h3m1 0h2M1 11.5h1m1 0h1m1 0h1m2 0h4m4 0h1m1 0h2m1 0h4m3 0h1M0 12.5h1m4 0h2m3 0h1m1 0h1m1 0h1m2 0h2m6 0h2M0 13.5h3m2 0h1m1 0h1m1 0h2m3 0h3m2 0h1m2 0h2m2 0h3M0 14.5h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m3 0h3m1 0h1m1 0h2m1 0h3M3 15.5h1m1 0h1m1 0h1m2 0h2m2 0h3m2 0h1m1 0h4m2 0h1M0 16.5h2m1 0h1m1 0h3m2 0h3m1 0h1m3 0h1m2 0h1m2 0h2m1 0h1M2 17.5h1m4 0h2m1 0h3m1 0h2m2 0h1m1 0h2m1 0h1m1 0h3M0 18.5h1m2 0h2m1 0h3m3 0h4m4 0h2m1 0h1m2 0h1M2 19.5h3m2 0h8m2 0h1m1 0h1m1 0h2m3 0h1M1 20.5h3m1 0h2m1 0h1m1 0h1m2 0h14M8 21.5h4m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m5 0h1m1 0h2m1 0h2m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h2m2 0h5m3 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h2m4 0h3m2 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h3m2 0h2m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m4 0h2m1 0h1m1 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m4 0h1m1 0h3m4 0h1m2 0h1m1 0h1m1 0h1M0 28.5h7m1 0h3m1 0h1m3 0h1m2 0h2m4 0h1m1 0h1"/></svg>
             <div class="qr-label">@the1sheh</div>
-            <div class="qr-sub">Follow the climb on Instagram</div>
           </div>
         </div>
-        <p class="fine">&copy; 2026 The S.H.E.H Company &middot; Start Hard. End Hard.</p>
+        <!-- the email is a live link on screen but prints as plain text -->
+        <p class="email-line"><a href="mailto:the1sheh@gmail.com">the1sheh@gmail.com</a></p>
+        <p class="org-line">Here for the story? It lives at shehthrive.org.</p>
+        <p class="close-motto">Start Hard. End Hard.</p>
       </div>
     </div>
 
     <!-- PANEL 1: FRONT COVER -->
     <div class="panel cover">
       <div class="cover-top">
+        <div class="cover-mark" aria-hidden="true">&#9670;</div>
         <div class="cover-name">S<span class="dot">.</span>H<span class="dot">.</span>E<span class="dot">.</span>H</div>
         <div class="cover-motto">Start Hard. End Hard.</div>
       </div>
       <div class="cover-bottom">
-        <!-- mountain ridgeline, echoes the website hero -->
-        <svg class="peak-svg" viewBox="0 0 100 26" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <polygon fill="#141518" points="0,17 15,10 30,18 45,8 58,16 72,9.5 85,15 100,11 100,26 0,26"/>
-        </svg>
         <div class="company">The S.H.E.H Company</div>
-        <div class="site">shehthrive.com</div>
       </div>
     </div>
   </div>
 
   <!-- ============ PAGE 2 — INSIDE SPREAD ============ -->
-  <!-- Panel order when flat: the bars | our story | FAQ -->
+  <!-- Panel order when flat: The Goods | The Stock | Straight Answers -->
   <div class="sheet">
     <div class="fold-tick t1"></div><div class="fold-tick t2"></div>
     <div class="fold-tick b1"></div><div class="fold-tick b2"></div>
 
-    <!-- PANEL 2: THE BARS -->
+    <!-- PANEL 2: THE GOODS -->
     <div class="panel">
-      <span class="kicker">The Bars</span>
-      <h2>Fuel for the Climb</h2>
-      <p>Honest protein bars, made in small batches. Real ingredients, no noise.</p>
-      <ul class="bar-list">
-        <li><strong>First Light</strong> &mdash; peanut butter &amp; dark chocolate</li>
-        <li><strong>The Grind</strong> &mdash; coffee &amp; cacao</li>
-        <li><strong>Last Rep</strong> &mdash; salted caramel &amp; almond</li>
-      </ul>
-      <p class="muted">Scan the code on the back and you'll hear the moment the first batch lands.</p>
-      <p class="footnote">Flavor lineup shown is preliminary and subject to change. Official names and flavors will be announced before launch.</p>
-    </div>
-
-    <!-- PANEL 3: OUR STORY -->
-    <div class="panel">
-      <span class="kicker">Our Story</span>
-      <h2>Two Friends, One Standard</h2>
-      <p>SHEH started with two friends, full-time jobs, and a kitchen. No investors, no playbook — early mornings, small batches, and a belief that ordinary men doing hard things right is worth backing.</p>
+      <span class="kicker" aria-hidden="true">&#9670;</span>
+      <h2>The Goods</h2>
+      <p>Durable goods for people who live hard and active — gear built to be used rough and last long.</p>
+      <p>Comfortable enough to live in, tough enough to work in.</p>
       <div class="trail">
-        <svg class="peak-svg" width="14" height="12" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon fill="#c75b2a" points="7,0 14,12 0,12"/></svg>
+        <span class="mark" aria-hidden="true">&#9670;</span>
       </div>
-      <p>We're not here to tell you how to be a man. We're here to fuel the one you already are.</p>
+      <p class="standard-line">If it wears the mark, it holds the standard.</p>
     </div>
 
-    <!-- PANEL 4: FAQ -->
+    <!-- PANEL 3: THE STOCK -->
     <div class="panel">
-      <span class="kicker">Straight Answers</span>
-      <h2>What Men Ask Us</h2>
+      <span class="kicker" aria-hidden="true">&#9670;</span>
+      <h2>The Stock</h2>
+      <ul class="stock-list">
+        <li>
+          <span class="stock-name">Patches</span>
+          <span class="stock-desc">Coming soon. First out of the gate.</span>
+        </li>
+        <li>
+          <span class="stock-name">Gear</span>
+          <span class="stock-desc">In the works. Shirts, hats, socks. Built to be used.</span>
+        </li>
+        <li>
+          <span class="stock-name">The Small Stuff</span>
+          <span class="stock-desc">Stickers &amp; more. For the lighter side.</span>
+        </li>
+      </ul>
+      <p class="muted">Nothing’s on the shelf yet — early details may shift before things land. When something’s real, the list hears first.</p>
+    </div>
+
+    <!-- PANEL 4: STRAIGHT ANSWERS -->
+    <div class="panel">
+      <span class="kicker" aria-hidden="true">&#9670;</span>
+      <h2>Straight Answers</h2>
       <p class="faq-q">What does SHEH mean?</p>
-      <p class="faq-a">Start Hard, End Hard. Life is hard — early mornings, kids, work. We make fuel for the men who meet it.</p>
-      <p class="faq-q">What's in the bars?</p>
-      <p class="faq-a">Flavors built around peanut butter, dark chocolate, coffee, cacao, salted caramel, and almond. The full ingredient list goes public when the first batch ships.</p>
-      <p class="faq-q">Where do I buy one?</p>
-      <p class="faq-a">The first batch is on the way. Scan the website code on the back, drop your email, and you'll hear before anyone else.</p>
-      <p class="faq-q">Another supplement company?</p>
-      <p class="faq-a">No — a code first. The bars exist to fuel it: do the hard thing, keep your word, never quit.</p>
+      <p class="faq-a">Start Hard, End Hard — whole effort, finish what you start, don’t quit in between.</p>
+      <p class="faq-q">Can I buy anything today?</p>
+      <p class="faq-a">Not yet — and we won’t pretend you can. Get in line on the next panel.</p>
+      <p class="faq-q">How much will things cost?</p>
+      <p class="faq-a">Not set yet. What we can promise: fair. The list hears first.</p>
+      <p class="faq-q">Will you ship?</p>
+      <p class="faq-a">Small and steady — first goods move hand to hand. Shipping comes as we grow.</p>
+      <p class="faq-q">Are the designs your own?</p>
+      <p class="faq-a">Every design comes through us. If it wears the mark, we signed off on it.</p>
+      <p class="faq-q">What about the bars?</p>
+      <p class="faq-a">Where we started — still on the long road. Nothing for sale yet.</p>
     </div>
   </div>
 

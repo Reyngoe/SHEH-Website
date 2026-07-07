@@ -1,12 +1,13 @@
 # SHEH STOREFRONT (shehthrive.com) — STATUS
 
-*Last updated: 2026-06-25 (homepage merch-pivot rebuild MERGED, + Roy palette
-regression fixed, + email signup moved to MailerLite, + FAQ merch-pivot rebuild
-& site-wide "Shop" nav item MERGED via PR #20, + full site audit/conformance
-pass run — see AUDIT section, + OUR STORY MERCH-PIVOT REWRITE done with
-owner-approved copy — see OUR STORY section). This file briefs a brand-new
-session (or person) with no other context. Update it at the end of every
-completed task (CLAUDE.md standing rule).*
+*Last updated: 2026-07-07 (BROCHURE OVERHAUL done with owner-approved final
+copy — see BROCHURE section. Earlier: homepage merch-pivot rebuild MERGED, +
+Roy palette regression fixed, + email signup moved to MailerLite, + FAQ
+merch-pivot rebuild & site-wide "Shop" nav item MERGED via PR #20, + full site
+audit/conformance pass run — see AUDIT section, + OUR STORY MERCH-PIVOT
+REWRITE done with owner-approved copy — see OUR STORY section). This file
+briefs a brand-new session (or person) with no other context. Update it at the
+end of every completed task (CLAUDE.md standing rule).*
 
 PROJECT: Static site (HTML/CSS/JS, no backend) on GitHub Pages. Repo: github.com/Reyngoe/SHEH-Website. Brand = SHEH merch (ethos-driven). Co-founders Jacob & Patrick, San Diego.
 
@@ -55,10 +56,17 @@ OUR STORY MERCH-PIVOT REWRITE — DONE 2026-06-25 (owner-approved final copy, pa
 - NEW section in its place (same slot, same "dark prose" class, same eyebrow + h2 + paragraphs pattern, trail divider kept so the visual beat before "Our People" is unchanged): "The Road Ahead / More than a wrapper" — the code lives on more than a wrapper; gear that works as hard as you do; stickers, patches, and more; "If it wears the mark, it holds the standard."
 - Untouched (verified — only three content hunks + the template in the diff): hero, "Since middle school," both bios, "The people behind us," signature quote, CTAs, meta description, nav, footer.
 
+BROCHURE OVERHAUL — DONE 2026-07-07 (owner-approved final copy, pasted exactly; on branch `claude/pending-task-q1mgyp` awaiting owner review/merge):
+- brochure.html fully rebuilt goods-framed (the pre-pivot bar-framed version was a rough draft being replaced, not patched — no parked template needed; the bar lineup/flavors it carried still live in PENDING.md resolved rows and faq.html's parked template).
+- FORMAT (unchanged): tri-fold, classic C-fold (letter fold), letter landscape, 2 sides, duplex "flip on short edge," fold ticks at the thirds, black-on-white so it prints clean in B&W. Imposition: page 1 (outside) = [Get the Word flap | back cover | front cover]; page 2 (inside spread) = [The Goods | The Stock | Straight Answers].
+- SIX PANELS (owner copy verbatim): (1) COVER — ◆ mark, S.H.E.H, "Start Hard. End Hard.", The S.H.E.H Company, nothing else (old ridgeline SVG + site URL removed). (2) THE GOODS — durable-goods statement ending "If it wears the mark, it holds the standard." (3) THE STOCK — PATCHES / GEAR / THE SMALL STUFF entries + "Nothing's on the shelf yet…" closing line. (4) STRAIGHT ANSWERS — six Q&As (SHEH meaning / buy today / cost / ship / designs / bars). (5) GET THE WORD — list-first + join at shehthrive.com or DM @the1sheh + "you'll only ever buy through us or this site." (6) BACK — QR→shehthrive.com (URL under it), QR→instagram.com/the1sheh (@the1sheh under it), the1sheh@gmail.com (mailto on screen, plain text in print), small quiet "Here for the story? It lives at shehthrive.org.", closing motto. No third QR; old © line dropped per the owner's exact panel spec.
+- Meta description ADDED per owner instruction ("The S.H.E.H Company's printable tri-fold — the goods, straight answers, and how to get the word first.") — this supersedes audit ruling 16's "no meta description" state; Roy still intentionally OFF this page.
+- Screen-only bits verified: site nav matches the five-item menu (Home, Shop, Our Story, Philosophy, FAQ) and never prints; print/fold instructions updated to the new panel names; old bar-disclaimer warning removed. Print-preview verified via headless-Chrome PDF: exactly 2 letter-landscape pages, nav/instructions absent, all six panels correct.
+- Brochure keeps its own standalone print token set (--ink/--gray/--light/--ember) — separate from the site pages by design.
+
 REMAINING / NOT STARTED:
 - Owner to confirm/correct the placeholder Patches & Gear product copy.
 - FAQ Q2 ("What do you sell?") should add STICKERS on its next owner-approved copy touch (owner ruling logged in PENDING.md; deliberately not changed in the Our Story task).
-- Brochure overhaul still open (bar-framed — revisit post-pivot; owner confirmed brochure stays as-is until then). Philosophy/Roy mostly stay as brand tier.
-- Old Man Roy voice dial-in pass.
+- Old Man Roy voice dial-in pass — the remaining structural item on Site 1 (brochure overhaul is now done; Philosophy/Roy mostly stay as brand tier).
 - SEPARATE LATER PROJECT: shopping cart / e-commerce (platform TBD).
 - Department collection pages (each category clicks into a fillable collection of items) — part of later product/cart build.
