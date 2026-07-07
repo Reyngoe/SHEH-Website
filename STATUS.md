@@ -3,9 +3,10 @@
 *Last updated: 2026-06-25 (homepage merch-pivot rebuild MERGED, + Roy palette
 regression fixed, + email signup moved to MailerLite, + FAQ merch-pivot rebuild
 & site-wide "Shop" nav item MERGED via PR #20, + full site audit/conformance
-pass run — see AUDIT section). This file briefs a brand-new session (or person)
-with no other context. Update it at the end of every completed task (CLAUDE.md
-standing rule).*
+pass run — see AUDIT section, + OUR STORY MERCH-PIVOT REWRITE done with
+owner-approved copy — see OUR STORY section). This file briefs a brand-new
+session (or person) with no other context. Update it at the end of every
+completed task (CLAUDE.md standing rule).*
 
 PROJECT: Static site (HTML/CSS/JS, no backend) on GitHub Pages. Repo: github.com/Reyngoe/SHEH-Website. Brand = SHEH merch (ethos-driven). Co-founders Jacob & Patrick, San Diego.
 
@@ -13,7 +14,7 @@ CURRENT PHASE: Pivoting from a bar-only brochure to a brand-forward general MERC
 
 BRAND/CONTENT ALREADY DIALED IN (gold-standard voice):
 - Philosophy page: five pillars (Built not given / Start hard / End hard / Hard not harsh / The Long Game) + signature quote. This page = brand voice gold standard.
-- Our Story page: full rebuilt content (title "Two Friends, One Code"). Founders speak as "we."
+- Our Story page: MERCH-PIVOT REWRITE DONE (owner-approved copy, see OUR STORY section below). Title "Two Friends, One Code"; founders speak as "we." Page is now fully brand/goods-tier — no live bar-era copy remains.
 - FAQ page: MERCH-PIVOT REBUILD DONE (see FAQ section below). Twelve general-merch Q&As; the five bar-specific Q&As are parked in an inert template for when bars launch.
 - Old Man Roy chat widget (mentor-words.js + mentor.js): live on the four CONTENT pages (index, our-story, philosophy, faq) with 988 crisis safety. NOTE (audit finding): the print brochure (brochure.html) does NOT include the Roy scripts — same reasoning as its screen-only nav; a chat widget on a printable tri-fold makes no sense. So "Roy on every page" really means "every content page." Visual bug on the homepage is CLOSED (see Roy palette fix below); the voice dial-in pass is still OPEN and separate.
 
@@ -48,9 +49,15 @@ SITE AUDIT / CONFORMANCE PASS — RAN 2026-06-25 (safe fixes committed straight 
   (3) CONFIRMED AS-IS — brochure.html intentionally has no Roy and no meta description; folds into the future brochure overhaul. If Roy is ever added there, it must first define the 11 palette vars (brochure uses a separate --ink/--gray/--light token set).
 - SKIPPED (by design): per-page inline CSS duplication (no build step); brochure's divergent token names (standalone print doc, folds into the brochure overhaul).
 
+OUR STORY MERCH-PIVOT REWRITE — DONE 2026-06-25 (owner-approved final copy, pasted exactly; committed to main):
+- "2023 / It started with a simple problem" body rewritten to the owner's final copy (early risers → the same wall → clean/simple/trustworthy → bar worth trusting → "you build it yourself" → the bold "other people are looking for this too." kept bolded in the existing markup).
+- "No Factory / Two kitchens, the hard way" PARKED, NOT DELETED: the entire section (eyebrow, heading, all three paragraphs, trail divider — plus its original comment header) moved VERBATIM into an inert <template id="parked-bars-story"> at the bottom of our-story.html, mirroring the site's parked-bars pattern. Verified byte-identical to the original by diff against git HEAD. Surfaces when bars go live.
+- NEW section in its place (same slot, same "dark prose" class, same eyebrow + h2 + paragraphs pattern, trail divider kept so the visual beat before "Our People" is unchanged): "The Road Ahead / More than a wrapper" — the code lives on more than a wrapper; gear that works as hard as you do; stickers, patches, and more; "If it wears the mark, it holds the standard."
+- Untouched (verified — only three content hunks + the template in the diff): hero, "Since middle school," both bios, "The people behind us," signature quote, CTAs, meta description, nav, footer.
+
 REMAINING / NOT STARTED:
-- OUR STORY MERCH-PIVOT REWRITE — this is the NEXT OWNER-LED task. The back half of our-story.html is still bar-era origin copy; it is deliberately excluded from mechanical passes and gets an owner-workshopped rewrite. No line of it was touched in the audit or the conformance fixes (footer/landmark only).
 - Owner to confirm/correct the placeholder Patches & Gear product copy.
+- FAQ Q2 ("What do you sell?") should add STICKERS on its next owner-approved copy touch (owner ruling logged in PENDING.md; deliberately not changed in the Our Story task).
 - Brochure overhaul still open (bar-framed — revisit post-pivot; owner confirmed brochure stays as-is until then). Philosophy/Roy mostly stay as brand tier.
 - Old Man Roy voice dial-in pass.
 - SEPARATE LATER PROJECT: shopping cart / e-commerce (platform TBD).

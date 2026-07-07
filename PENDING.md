@@ -31,6 +31,12 @@ whole bracket — including the brackets — with the real words.
 - **Patrick's Our Story bio + family reference:** Patrick to supply his
   own wording (current copy is owner-approved placeholder).
 - **E-commerce / cart platform decision** (later cart project).
+- **FAQ Q2 sticker mention (queued copy touch):** stickers are now a
+  confirmed part of the merch lineup (see Resolved #17) and appear in the
+  Our Story "Road Ahead" section, but FAQ Q2 ("What do you sell?") doesn't
+  mention them yet. Add stickers there on its next owner-approved copy
+  touch — deliberately NOT changed during the Our Story task (one task at
+  a time; FAQ copy is locked between owner passes).
 
 ## Resolved
 
@@ -50,3 +56,4 @@ whole bracket — including the brackets — with the real words.
 | 14 | Audit proposal: footer alignment (our-story + philosophy) | Owner ruling: **approved**. Both footers aligned to the index/faq reference — all four content-page footers now identical (S.H.E.H mark + motto, page links, IG/X/YouTube/Email, shehthrive.org cross-link). |
 | 15 | Audit proposal: `<main>` landmark | Owner ruling: **approved**. Added on all four content pages (markup only, zero visual change); brochure excluded per ruling 16. |
 | 16 | Audit proposal: brochure Roy + meta description | Owner ruling: **leave brochure.html as-is** — no Roy, no meta description on the print artifact. Folds into the future brochure overhaul. (If Roy is ever added there, brochure must first define the 11 palette variables the widget reads.) |
+| 17 | Stickers in the merch lineup | Owner ruling (Our Story rewrite, 2026-06-25): **stickers are confirmed part of the merch lineup** — named in the Our Story "Road Ahead" section ("stickers, patches, and more, for the lighter side"). FAQ Q2 gets the sticker mention on its next owner-approved touch (open item above). |
