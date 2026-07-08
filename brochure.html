@@ -14,11 +14,24 @@
     /* ============================================================
        S.H.E.H TRI-FOLD BROCHURE — letter paper, landscape, 2 sides
        Fold style: classic C-fold (letter fold).
+       Duplex: FLIP ON SHORT EDGE (landscape sheets keep the same
+       top edge that way; long-edge flip prints side 2 upside down).
 
        Page 1 = OUTSIDE of the folded brochure:
-         [ inside flap: Get the Word | back cover: QR codes | FRONT COVER ]
+         [ inner flap: Get the Word | back cover: QR codes | FRONT COVER ]
        Page 2 = INSIDE spread:
          [ The Goods | The Stock | Straight Answers ]
+
+       PANEL WIDTHS — not equal thirds. The flap (the physical
+       panel carrying Get the Word / Straight Answers) folds INSIDE
+       the other two, so it must be 1/16" narrower for the fold to
+       close flat:  3.6875" + 3.6875" + 3.625" = 11".
+       Outside face, left to right: flap | back | cover
+         → folds at 3.625" and 7.3125"
+       Inside face (short-edge flip mirrors left/right): goods | stock | answers(flap)
+         → folds at 3.6875" and 7.375"
+       (Same two physical creases — coordinates mirror because the
+       sheet is seen from the other side.)
 
        Design notes:
        - Black text on white only. No background colors or images,
@@ -26,6 +39,7 @@
        - All graphics are inline SVG or plain glyphs (they always print).
        - Ember orange appears only as small accents; it turns
          dark gray in black-and-white and still reads fine.
+       - Print sizes: body ≥ 9.5pt, nothing under 8pt anywhere.
        ============================================================ */
 
     :root {
@@ -163,24 +177,31 @@
     }
 
     .panel {
-      width: 33.3333%;
       height: 100%;
       padding: 0.55in 0.42in;
       display: flex;
       flex-direction: column;
     }
+    /* full-width panels vs the narrow inner flap (see header note) */
+    .panel.w-full { width: 3.6875in; }
+    .panel.w-flap { width: 3.625in; }
 
-    /* tiny fold guides at top & bottom edges */
+    /* hairline fold guides at top & bottom edges, outside the content
+       area (content starts 0.55in down). They run 0.4in in from the
+       trim so they still show inside a home printer's ~0.25in
+       unprintable border. Positions differ per face — see header. */
     .fold-tick {
       position: absolute;
       width: 0;
-      height: 0.14in;
+      height: 0.4in;
       border-left: 1px solid #c9c9c9;
     }
-    .fold-tick.t1 { left: 33.3333%; top: 0; }
-    .fold-tick.t2 { left: 66.6667%; top: 0; }
-    .fold-tick.b1 { left: 33.3333%; bottom: 0; }
-    .fold-tick.b2 { left: 66.6667%; bottom: 0; }
+    .fold-tick.t1, .fold-tick.t2 { top: 0; }
+    .fold-tick.b1, .fold-tick.b2 { bottom: 0; }
+    .sheet.outside .fold-tick.t1, .sheet.outside .fold-tick.b1 { left: 3.625in; }
+    .sheet.outside .fold-tick.t2, .sheet.outside .fold-tick.b2 { left: 7.3125in; }
+    .sheet.inside .fold-tick.t1, .sheet.inside .fold-tick.b1 { left: 3.6875in; }
+    .sheet.inside .fold-tick.t2, .sheet.inside .fold-tick.b2 { left: 7.375in; }
 
     /* ---------- shared type ---------- */
     /* small diamond accent above each panel heading — a glyph, not copy */
@@ -199,7 +220,7 @@
       line-height: 1.12;
       margin-bottom: 0.14in;
     }
-    .panel p { font-size: 9.5pt; line-height: 1.55; color: var(--ink); margin-bottom: 0.1in; }
+    .panel p { font-size: 10pt; line-height: 1.55; color: var(--ink); margin-bottom: 0.1in; }
     .panel p.muted { color: var(--gray); }
 
     .rule {
@@ -259,11 +280,11 @@
     .cover-motto {
       font-family: var(--font-head);
       font-weight: 600;
-      font-size: 12.5pt;
+      font-size: 11.5pt;
       text-transform: uppercase;
-      letter-spacing: 0.32em;
+      letter-spacing: 0.28em;
       margin-top: 0.16in;
-      white-space: nowrap; /* one line; centered overflow stays inside the panel padding */
+      white-space: nowrap; /* one line; sized so even fallback fonts stay ≥0.25in off the fold */
     }
     .cover-bottom { width: 100%; }
     .cover-bottom .company {
@@ -276,7 +297,7 @@
 
     /* ============ BACK COVER (QR panel) ============ */
     .back { text-align: center; justify-content: center; }
-    .qr-row { display: flex; justify-content: center; gap: 0.32in; margin-top: 0.1in; }
+    .qr-row { display: flex; justify-content: center; gap: 0.4in; margin-top: 0.1in; }
     .qr { width: 1.28in; }
     .qr svg { width: 1.28in; height: 1.28in; display: block; margin: 0 auto; }
     .qr .qr-label {
@@ -287,12 +308,12 @@
       margin-top: 0.08in;
     }
     .back .email-line {
-      font-size: 9pt;
+      font-size: 9.5pt;
       letter-spacing: 0.04em;
       margin-top: 0.3in;
     }
     .back .email-line a { color: inherit; text-decoration: none; }
-    .back .org-line { font-size: 7.5pt; color: var(--gray); margin-top: 0.22in; }
+    .back .org-line { font-size: 8pt; color: var(--gray); margin-top: 0.22in; }
     .back .close-motto {
       font-family: var(--font-head);
       font-weight: 600;
@@ -317,19 +338,19 @@
       letter-spacing: 0.08em;
       display: block;
     }
-    .stock-desc { font-size: 9.5pt; line-height: 1.5; color: var(--ink); display: block; margin-top: 0.02in; }
+    .stock-desc { font-size: 10pt; line-height: 1.5; color: var(--ink); display: block; margin-top: 0.02in; }
 
     /* ============ STRAIGHT ANSWERS panel ============ */
     .faq-q {
       font-family: var(--font-head);
       font-weight: 600;
-      font-size: 9.5pt;
+      font-size: 10pt;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-top: 0.12in;
+      margin-top: 0.13in;
     }
     .faq-q:first-of-type { margin-top: 0; }
-    .faq-a { font-size: 8.5pt; line-height: 1.5; color: var(--ink); margin-top: 0.03in; }
+    .faq-a { font-size: 9.5pt; line-height: 1.5; color: var(--ink); margin-top: 0.03in; }
   </style>
 </head>
 <body>
@@ -355,20 +376,21 @@
   <div class="no-print">
     <h1>How to print &amp; fold this brochure</h1>
     <ol>
-      <li><strong>Print:</strong> File &rarr; Print. Paper: Letter. Orientation: Landscape. Two-sided: ON, <strong>"flip on short edge."</strong> Scale: 100% / "Actual size." Margins: None (or Minimum).</li>
+      <li><strong>Print settings (all five matter):</strong> Paper: <strong>Letter</strong>. Orientation: <strong>Landscape</strong>. Scale: <strong>100% / "Actual size"</strong> — never "Fit to page," which shrinks everything and moves the folds. Margins: <strong>None</strong> (or Minimum). Two-sided: ON, <strong>"flip on SHORT edge."</strong></li>
+      <li><strong>If side 2 comes out upside down,</strong> your printer flipped on the LONG edge (most printers' default) — reprint with "flip on short edge" / "short-edge binding."</li>
       <li><strong>No duplex printer?</strong> Print page 1 alone, put the sheet back in the tray printed-side down with the same top edge leading, then print page 2. Test with one sheet first.</li>
-      <li><strong>Fold (classic C-fold / letter fold):</strong> Lay the sheet with the INSIDE spread facing up — that's the side with The Goods / The Stock / Straight Answers. Fold the <strong>right panel (Straight Answers) in</strong> over the middle, then fold the <strong>left panel (The Goods) over the top</strong>. The S.H.E.H cover ends up on the front. Faint gray tick marks at the page edges show where the folds go.</li>
+      <li><strong>Fold (classic C-fold / letter fold):</strong> Lay the sheet with the INSIDE spread facing up — that's the side with The Goods / The Stock / Straight Answers. Fold the <strong>right panel (Straight Answers) in</strong> over the middle — it's cut slightly narrow on purpose so it tucks in flat — then fold the <strong>left panel (The Goods) over the top</strong>. The S.H.E.H cover ends up on the front. Faint gray tick marks at the top and bottom edges show where the folds go.</li>
     </ol>
   </div>
 
   <!-- ============ PAGE 1 — OUTSIDE ============ -->
-  <!-- Panel order when flat: inside flap (Get the Word) | back cover | front cover -->
-  <div class="sheet">
+  <!-- Panel order when flat: inner flap (Get the Word, narrow) | back cover | front cover -->
+  <div class="sheet outside">
     <div class="fold-tick t1"></div><div class="fold-tick t2"></div>
     <div class="fold-tick b1"></div><div class="fold-tick b2"></div>
 
-    <!-- PANEL 5: GET THE WORD (inside flap) -->
-    <div class="panel">
+    <!-- PANEL 5: GET THE WORD (inner flap — narrow) -->
+    <div class="panel w-flap">
       <span class="kicker" aria-hidden="true">&#9670;</span>
       <h2>Get the Word</h2>
       <p>When goods land, the list hears first — first word on drops, prices, and everything new.</p>
@@ -379,7 +401,7 @@
     </div>
 
     <!-- PANEL 6: BACK COVER — QR codes -->
-    <div class="panel back">
+    <div class="panel w-full back">
       <div>
         <div class="qr-row">
           <div class="qr">
@@ -401,7 +423,7 @@
     </div>
 
     <!-- PANEL 1: FRONT COVER -->
-    <div class="panel cover">
+    <div class="panel w-full cover">
       <div class="cover-top">
         <div class="cover-mark" aria-hidden="true">&#9670;</div>
         <div class="cover-name">S<span class="dot">.</span>H<span class="dot">.</span>E<span class="dot">.</span>H</div>
@@ -414,13 +436,13 @@
   </div>
 
   <!-- ============ PAGE 2 — INSIDE SPREAD ============ -->
-  <!-- Panel order when flat: The Goods | The Stock | Straight Answers -->
-  <div class="sheet">
+  <!-- Panel order when flat: The Goods | The Stock | Straight Answers (narrow flap) -->
+  <div class="sheet inside">
     <div class="fold-tick t1"></div><div class="fold-tick t2"></div>
     <div class="fold-tick b1"></div><div class="fold-tick b2"></div>
 
     <!-- PANEL 2: THE GOODS -->
-    <div class="panel">
+    <div class="panel w-full">
       <span class="kicker" aria-hidden="true">&#9670;</span>
       <h2>The Goods</h2>
       <p>Durable goods for people who live hard and active — gear built to be used rough and last long.</p>
@@ -432,7 +454,7 @@
     </div>
 
     <!-- PANEL 3: THE STOCK -->
-    <div class="panel">
+    <div class="panel w-full">
       <span class="kicker" aria-hidden="true">&#9670;</span>
       <h2>The Stock</h2>
       <ul class="stock-list">
@@ -452,8 +474,8 @@
       <p class="muted">Nothing’s on the shelf yet — early details may shift before things land. When something’s real, the list hears first.</p>
     </div>
 
-    <!-- PANEL 4: STRAIGHT ANSWERS -->
-    <div class="panel">
+    <!-- PANEL 4: STRAIGHT ANSWERS (back of the flap — narrow) -->
+    <div class="panel w-flap">
       <span class="kicker" aria-hidden="true">&#9670;</span>
       <h2>Straight Answers</h2>
       <p class="faq-q">What does SHEH mean?</p>
